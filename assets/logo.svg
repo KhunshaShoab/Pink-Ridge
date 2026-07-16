@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Pink Ridge — round seal logo (SVG recreation of the brand mark).
+  REPLACE: swap in the real high-res /assets/logo.png export when available,
+  or replace this file with the official vector. Colours match the brand palette.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Pink Ridge — Natural Pink Salt, from the Himalayas to your haven">
+  <defs>
+    <path id="pr-top" d="M 90,300 A 210,210 0 0 1 510,300" fill="none"/>
+    <path id="pr-bottom" d="M 122,300 A 178,178 0 0 0 478,300" fill="none"/>
+    <linearGradient id="pr-crystal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7DDE0"/>
+      <stop offset="0.5" stop-color="#EBB7BE"/>
+      <stop offset="1" stop-color="#D998A0"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="300" cy="300" r="298" fill="#F4E4E1"/>
+  <circle cx="300" cy="300" r="252" fill="none" stroke="#B08080" stroke-width="2.5"/>
+
+  <!-- Arced taglines -->
+  <text font-family="'Cormorant Garamond', Georgia, serif" fill="#96635F" letter-spacing="8" font-size="30" font-weight="600">
+    <textPath href="#pr-top" startOffset="50%" text-anchor="middle">FROM THE HIMALAYAS</textPath>
+  </text>
+  <text font-family="'Cormorant Garamond', Georgia, serif" fill="#96635F" letter-spacing="10" font-size="30" font-weight="600">
+    <textPath href="#pr-bottom" startOffset="50%" text-anchor="middle">TO YOUR HAVEN</textPath>
+  </text>
+
+  <!-- Mountain -->
+  <g fill="none" stroke="#B08080" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 205,232 L 262,175 L 300,205 L 340,150 L 398,232"/>
+    <path d="M 248,205 L 262,192 L 278,205"/>
+    <path d="M 322,182 L 340,166 L 358,182"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="300" y="300" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="72" font-weight="700" letter-spacing="2" fill="#B08080">PINK RIDGE</text>
+  <text x="300" y="342" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="30" font-weight="500" letter-spacing="7" fill="#96635F">NATURAL PINK SALT</text>
+
+  <!-- Rose salt crystal -->
+  <path d="M 300,372 L 322,388 L 330,418 L 322,452 L 300,470 L 278,452 L 270,418 L 280,390 Z"
+        fill="url(#pr-crystal)" stroke="#C98F97" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M 300,372 L 300,470 M 280,390 L 322,388 M 270,418 L 330,418 M 278,452 L 322,452"
+        fill="none" stroke="#D9A6AD" stroke-width="1" opacity="0.7"/>
+</svg>
