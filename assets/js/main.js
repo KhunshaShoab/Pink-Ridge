@@ -7,9 +7,14 @@
   var body = document.body;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Scroll-aware header */
+  /* Scroll-aware header + transparent nav over full-bleed hero */
   var header = document.querySelector('.site-header');
-  function onScroll() { if (header) header.classList.toggle('scrolled', window.scrollY > 24); }
+  var hasHeroFull = !!document.querySelector('.hero-full');
+  function onScroll() {
+    var scrolled = window.scrollY > 24;
+    if (header) header.classList.toggle('scrolled', scrolled);
+    if (hasHeroFull) body.classList.toggle('at-top', !scrolled);
+  }
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 

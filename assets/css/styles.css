@@ -837,3 +837,82 @@ html { scroll-padding-top: calc(var(--topbar-h) + 90px); }
 
 /* mobile: keep pill nav tidy */
 @media (max-width: 1023px){ .header-pill--left { padding: 0.35rem 0.9rem 0.35rem 0.5rem; } }
+
+/* ==========================================================================
+   RESTRAINT PASS — Seed philosophy: discipline, typography, whitespace,
+   photography. Flatten decoration; full-bleed cinematic hero.
+   ========================================================================== */
+/* Flatten section backgrounds to subtle neutral tints (no heavy gradients) */
+.bg-ivory { background: #FBF8F4; }
+.bg-white { background: #FFFFFF; }
+.bg-beige { background: #F4ECE4; }
+.bg-peach { background: #F8E9E1; }
+.bg-blush { background: #F7E8E1; }
+.section--blush { background: #F8E9E1; }
+.section--sand { background: #F4ECE4; }
+.hero { background: #FBF8F4; }
+.section.bg-ivory::before, .section.bg-white::before, .section--glow::before { display: none !important; }
+.section-head.center h2::after { width: 40px; height: 1px; background: var(--brown); }
+
+/* Softer shadows, thin borders instead of heavy lift */
+:root { --shadow-img: 0 10px 30px -24px rgba(94,60,42,0.26); --shadow-lift: 0 16px 40px -30px rgba(94,60,42,0.28); }
+.card__media, .split__media img, .feature-card, .gallery-stage { box-shadow: none; }
+.value-item { box-shadow: none; }
+.value-item:hover { box-shadow: var(--shadow-img); }
+.card:hover { transform: translateY(-5px); }
+.card:hover .card__media { box-shadow: var(--shadow-img); }
+
+/* Clean, calm image shapes — no blobs / arches / circles */
+.img-blob, .img-arch, .img-round { border-radius: 14px !important; aspect-ratio: auto; }
+.hero__media img { border-radius: 14px; box-shadow: none; }
+.card__media, .feature-card, .split__media img, .gallery-stage, .form-card, .quote-box, .map-embed, .coming-soon { border-radius: 14px; }
+.thumb { border-radius: 8px; }
+.gallery-grid figure, .masonry figure { border-radius: 10px; }
+.gallery-strip a { border-radius: 10px; box-shadow: none; }
+.gallery-strip a::after { display: none; }
+.value-item { border-radius: 14px; }
+
+/* Restrained buttons */
+.btn { padding: 0.82rem 1.5rem; font-size: 0.7rem; }
+.btn--primary { background: var(--dark); }
+.btn--primary:hover { background: var(--brown); }
+.btn--light { background: #fff; color: var(--dark); }
+.btn--light:hover { background: var(--peach); color: var(--dark); }
+
+/* remove hero float / kenburns / heavy motion (keep only gentle fades) */
+.hero__media { animation: none !important; }
+
+/* ==========================================================================
+   Full-bleed cinematic hero (home)
+   ========================================================================== */
+.hero-full { position: relative; min-height: 94vh; display: flex; align-items: flex-end; overflow: hidden; }
+.hero-full__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hero-full__scrim { position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, rgba(28,20,16,0.42) 0%, rgba(28,20,16,0.08) 26%, rgba(28,20,16,0.10) 55%, rgba(28,20,16,0.72) 100%); }
+.hero-full__inner { position: relative; z-index: 2; width: 100%; padding-block: clamp(2.5rem, 7vh, 5rem); color: #fff; }
+.hero-full__row { display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(1.5rem, 4vw, 4rem); flex-wrap: wrap; }
+.hero-full__eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 1.4rem; }
+.hero-full__title { color: #fff; font-size: clamp(2.9rem, 7vw, 6rem); line-height: 0.98; letter-spacing: -0.02em; font-weight: 500; max-width: 15ch; }
+.hero-full__aside { max-width: 34ch; }
+.hero-full__aside p { color: rgba(255,255,255,0.86); font-size: 1rem; margin-bottom: 1.6rem; }
+.hero-full__aside .btn-row { gap: 0.7rem; }
+@media (max-width: 760px){ .hero-full { min-height: 90vh; } .hero-full__title { font-size: clamp(2.6rem,10vw,3.4rem); } }
+
+/* ==========================================================================
+   Transparent nav over the full-bleed hero (home only, at top)
+   ========================================================================== */
+body.at-top .topbar { background: transparent; color: #fff; }
+body.at-top .topbar a { color: #fff; }
+body.at-top .site-header .header-pill { background: transparent; border-color: rgba(255,255,255,0.32); box-shadow: none; backdrop-filter: none; }
+body.at-top .site-header .brand__name { color: #fff; }
+body.at-top .site-header .brand__name small { color: rgba(255,255,255,0.72); }
+body.at-top .site-header .nav a, body.at-top .site-header .dropdown__toggle { color: #fff; }
+body.at-top .site-header .nav a::after { background: #fff; }
+body.at-top .site-header .header-cta { background: #fff; color: var(--dark); }
+body.at-top .site-header .hamburger span { background: #fff; }
+body.at-top .site-header .brand__logo { background: rgba(255,255,255,0.9); }
+
+/* Simplify the dark shop block -> quieter (fewer tags, calmer) */
+.shop-block { background: #2E231D; }
+.shop-card { border-radius: 14px; }
+.shop-card__tag { background: rgba(255,255,255,0.9); color: var(--dark); }

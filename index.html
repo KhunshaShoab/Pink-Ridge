@@ -92,22 +92,24 @@
   </div>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__content" data-animate>
-          <p class="hero__eyebrow">Himalayan Pink Salt · Handcrafted for Export</p>
-          <h1 class="hero__title">Pure salt, quietly crafted for the modern home.</h1>
-          <p class="hero__sub">Hand-finished salt lamps, décor and edible pink salt — sourced from the Himalayan foothills and packed for buyers worldwide. No catalogue prices; every order is quoted to you directly.</p>
-          <div class="btn-row">
-            <a href="/products.html" class="btn btn--primary">Explore the Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a href="/contact.html" class="btn btn--outline">Request a Quote</a>
+    <!-- HERO (full-bleed cinematic) -->
+    <section class="hero-full">
+      <img class="hero-full__bg" src="/assets/lifestyle/hero-dusk.jpg" alt="A glowing Himalayan salt lamp in a moody luxury living room at dusk">
+      <div class="hero-full__scrim" aria-hidden="true"></div>
+      <div class="container hero-full__inner">
+        <div class="hero-full__row">
+          <div class="hero-full__headline" data-animate>
+            <p class="hero-full__eyebrow">From the Himalayas to your haven</p>
+            <h1 class="hero-full__title">Pure salt, quietly crafted.</h1>
+          </div>
+          <div class="hero-full__aside" data-animate data-delay="1">
+            <p>Hand-finished salt lamps, décor and edible pink salt — sourced from the Himalayan foothills and packed for buyers worldwide. Every order quoted directly.</p>
+            <div class="btn-row">
+              <a href="/products.html" class="btn btn--light">Explore the Collection</a>
+              <a href="/contact.html" class="btn btn--ghost-light">Request a Quote</a>
+            </div>
           </div>
         </div>
-        <figure class="hero__media" data-animate data-delay="1">
-          <img src="/assets/lifestyle/hero-living-room.jpg" alt="A glowing Himalayan salt lamp on a walnut side table in a luxury living room">
-          <figcaption>Hand-carved · Single origin</figcaption>
-        </figure>
       </div>
     </section>
     <!-- MARQUEE -->
@@ -137,22 +139,22 @@
       <div class="container">
         <div class="section-head center" data-animate><span class="eyebrow">The Collections</span><h2>A range shaped by hand, packed for the world.</h2><p class="lede mt-2">Four collections, one standard of finish — explore each and request a direct quote.</p></div>
         <div class="grid grid--4">
-          <a class="feature-card" href="/lamps.html" data-animate>
-            <img src="/assets/products/lamps/lamp-bowl-spheres-01.jpg" alt="Salt Lamps by Pink Ridge" loading="lazy">
-            <div class="feature-card__overlay"><span class="feature-card__cat">Lighting</span><h3>Salt Lamps</h3><p>Warm, ambient light cut from solid salt.</p><span class="feature-card__cta">Explore Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-          </a>
-          <a class="feature-card" href="/decor.html" data-animate data-delay="1">
-            <img src="/assets/lifestyle/decor-console.jpg" alt="Decorative Pieces by Pink Ridge" loading="lazy">
-            <div class="feature-card__overlay"><span class="feature-card__cat">Sculpture</span><h3>Decorative Pieces</h3><p>Sculptural objects for shelf and table.</p><span class="feature-card__cta">Explore Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-          </a>
-          <a class="feature-card" href="/edible.html" data-animate data-delay="2">
-            <img src="/assets/lifestyle/edible-bowl.jpg" alt="Edible Pink Salt by Pink Ridge" loading="lazy">
-            <div class="feature-card__overlay"><span class="feature-card__cat">Culinary</span><h3>Edible Pink Salt</h3><p>Clean, mineral-rich, food-safe grades.</p><span class="feature-card__cta">Explore Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-          </a>
-          <a class="feature-card" href="/bricks.html" data-animate data-delay="3">
-            <img src="/assets/lifestyle/bricks-spa.jpg" alt="Salt Bricks &amp; Tiles by Pink Ridge" loading="lazy">
-            <div class="feature-card__overlay"><span class="feature-card__cat">Architectural</span><h3>Salt Bricks &amp; Tiles</h3><p>Cooking blocks, slabs and wall tiles.</p><span class="feature-card__cta">Explore Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-          </a>
+          <article class="card" data-animate>
+            <a class="card__media" href="/lamps.html" aria-label="Salt Lamps"><img src="/assets/products/lamps/lamp-bowl-spheres-01.jpg" alt="Salt Lamps"></a>
+            <div class="card__body"><span class="card__cat">Lighting</span><h3><a href="/lamps.html">Salt Lamps</a></h3><p>Warm, ambient light cut from solid salt.</p><a href="/lamps.html" class="link-arrow">Explore Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </article>
+          <article class="card" data-animate data-delay="1">
+            <a class="card__media" href="/decor.html" aria-label="Decorative Pieces"><img src="/assets/lifestyle/decor-console.jpg" alt="Decorative Pieces"></a>
+            <div class="card__body"><span class="card__cat">Sculpture</span><h3><a href="/decor.html">Decorative Pieces</a></h3><p>Sculptural objects for shelf and table.</p><a href="/decor.html" class="link-arrow">Explore Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </article>
+          <article class="card" data-animate data-delay="2">
+            <a class="card__media" href="/edible.html" aria-label="Edible Pink Salt"><img src="/assets/lifestyle/edible-bowl.jpg" alt="Edible Pink Salt"></a>
+            <div class="card__body"><span class="card__cat">Culinary</span><h3><a href="/edible.html">Edible Pink Salt</a></h3><p>Clean, mineral-rich, food-safe grades.</p><a href="/edible.html" class="link-arrow">Explore Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </article>
+          <article class="card" data-animate data-delay="3">
+            <a class="card__media" href="/bricks.html" aria-label="Salt Bricks &amp; Tiles"><img src="/assets/lifestyle/bricks-spa.jpg" alt="Salt Bricks &amp; Tiles"></a>
+            <div class="card__body"><span class="card__cat">Architectural</span><h3><a href="/bricks.html">Salt Bricks &amp; Tiles</a></h3><p>Cooking blocks, slabs and wall tiles.</p><a href="/bricks.html" class="link-arrow">Explore Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </article>
         </div>
       </div>
     </section>
