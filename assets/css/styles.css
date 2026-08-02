@@ -724,3 +724,46 @@ body.nav-open .mobile-nav__panel { transform: translateX(0); }
 
 /* slightly tighten the vast whitespace */
 :root { --pad: clamp(4rem, 7.5vw, 7.5rem); }
+
+/* ==========================================================================
+   ROUND 2 FIXES — marquee, richer timeline, collection overlay cards
+   ========================================================================== */
+/* Running marquee banner (brought back, refined) */
+.marquee { background: linear-gradient(90deg,#3B2C25,#4A3226); color:#F3E3DA; overflow:hidden; padding:1.05rem 0; border-block:1px solid rgba(255,255,255,0.08); }
+.marquee__track { display:flex; gap:3.5rem; width:max-content; animation: pr-marquee 32s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__track span { display:inline-flex; align-items:center; gap:0.7rem; font-family:var(--serif); font-style:italic; font-size:1.15rem; letter-spacing:0.01em; white-space:nowrap; color:#F3E3DA; }
+.marquee__track span svg { width:15px; height:15px; color:#D8A98A; }
+.marquee__track .sep { color:#8A6f60; font-style:normal; }
+@keyframes pr-marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+
+/* Collection overlay cards get a category label */
+.feature-card__cat { color: var(--pink); font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:0.5rem; display:block; }
+.feature-card { aspect-ratio: 4/5; }
+.feature-card__overlay { background: linear-gradient(to top, rgba(43,32,26,0.86) 0%, rgba(43,32,26,0.25) 45%, transparent 72%); }
+
+/* Editorial spotlight (big split feature) */
+.spotlight__media img { width:100%; aspect-ratio:5/4; object-fit:cover; border-radius:26px; box-shadow: var(--shadow-lift); }
+@media (min-width:900px){ .spotlight__media img { aspect-ratio:4/3; } }
+
+/* ---- richer timeline: connector rail + numbered dots ---- */
+.timeline { position: relative; }
+.timeline__row { position: relative; grid-template-columns: auto 1fr; gap: 0.4rem 2rem; padding: 2.4rem 0 2.4rem 0; }
+@media (min-width: 720px){ .timeline__row { grid-template-columns: 90px 1fr; } }
+.timeline__k {
+  position: relative; z-index:1; width: 58px; height: 58px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--white); border: 1px solid var(--pink);
+  color: var(--copper); font-family: var(--serif); font-style: italic; font-size: 1.35rem;
+  box-shadow: 0 10px 24px -14px rgba(138,92,66,0.5); grid-row: span 1;
+}
+.timeline__k::before { /* vertical connector */
+  content:""; position:absolute; left:50%; top:58px; transform:translateX(-50%);
+  width:1px; height: calc(100% + 2.4rem); background: linear-gradient(var(--pink), transparent);
+}
+.timeline__row:last-child .timeline__k::before { display:none; }
+.timeline__body { padding-top: 0.5rem; }
+.timeline__row:hover .timeline__k { background: var(--grad-warm); color:#fff; border-color:transparent; transition: background .4s var(--ease), color .4s; }
+
+/* section eyebrow centered dot fix already handled; ensure marquee not double bordered */
+.badges { display:none; }
