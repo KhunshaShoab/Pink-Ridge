@@ -30,7 +30,7 @@
   }
   </script>
 </head>
-<body>
+<body class="home">
   <!-- ===================== TOP BAR ===================== -->
   <div class="topbar"><div class="container"><p class="topbar__text">Handcrafted Himalayan Pink Salt <span>•</span> Export Worldwide <span>•</span> Quotes within 24 Hours</p></div></div>
 
@@ -101,9 +101,22 @@
         <span class="blob blob--1" data-depth="22"></span>
         <span class="blob blob--2" data-depth="34"></span>
         <span class="blob blob--3" data-depth="16"></span>
-        <div class="scene" data-hero-scene>
-          <span class="scene__sphere" data-depth="16"></span>
-          <span class="scene__glow" data-depth="10"></span>
+      </div>
+
+      <div class="container hero2__inner">
+        <div class="hero2__content">
+          <span class="hero2__label" data-animate="rise">Nature's Purity. Crafted to Perfection.</span>
+          <h1 class="hero2__title" data-animate="rise" data-delay="1">The World's<br>Finest Himalayan<br><em>Pink Salt</em>.</h1>
+          <p class="hero2__desc" data-animate="rise" data-delay="2">Mined from ancient Himalayan ranges and handcrafted with care, our pink salt brings purity, beauty and warmth to homes and industries around the globe.</p>
+          <div class="btn-row" data-animate="rise" data-delay="3">
+            <a href="/products.html" class="btn btn--light magnetic">Explore Collection</a>
+            <a href="/contact.html" class="btn btn--ghost-light magnetic">Request a Quote</a>
+          </div>
+        </div>
+        <div class="hero2__right">
+          <div class="scene" data-hero-scene aria-hidden="true">
+            <span class="scene__sphere" data-depth="16"></span>
+            <span class="scene__glow" data-depth="10"></span>
           <svg class="scene__slab" data-depth="30" viewBox="0 0 340 110" aria-hidden="true">
             <defs>
               <linearGradient id="slabG" x1="0" y1="0" x2="0" y2="1">
@@ -163,52 +176,38 @@
             <path d="M12 48 L6 24 L28 6 L62 6 L82 30 L72 60 L40 74 L18 62 Z" fill="url(#cryG)"/>
           </svg>
 
-        </div>
-      </div>
-
-      <div class="container hero2__inner">
-        <div class="hero2__content">
-          <span class="hero2__label" data-animate="rise">Nature's Purity. Crafted to Perfection.</span>
-          <h1 class="hero2__title" data-animate="rise" data-delay="1">The World's<br>Finest Himalayan<br><em>Pink Salt</em>.</h1>
-          <p class="hero2__desc" data-animate="rise" data-delay="2">Mined from ancient Himalayan ranges and handcrafted with care, our pink salt brings purity, beauty and warmth to homes and industries around the globe.</p>
-          <div class="btn-row" data-animate="rise" data-delay="3">
-            <a href="/products.html" class="btn btn--light magnetic">Explore Collection</a>
-            <a href="/contact.html" class="btn btn--ghost-light magnetic">Request a Quote</a>
           </div>
+          <a href="/about.html" class="hero2__play magnetic" data-animate="fade" data-delay="3" aria-label="Watch our story">
+            <span class="hero2__play-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="hero2__play-txt">Play Our Story</span>
+          </a>
         </div>
-        <a href="/about.html" class="hero2__play magnetic" data-animate="fade" data-delay="3" aria-label="Watch our story">
-          <span class="hero2__play-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-          <span class="hero2__play-txt">Play<br>Our Story</span>
-        </a>
       </div>
     </section>
 
-    <!-- ===================== FLOATING TRUST CARD ===================== -->
-    <div class="ftc-wrap">
+    <!-- ===================== FEATURE CARDS ===================== -->
+    <section class="feat-cards">
       <div class="container">
-        <div class="ftc glass" data-animate="rise">
-          <div class="ftc__item">
-            <span class="ftc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l9-18 9 18z"/><path d="M8 15l4-8 4 8"/></svg></span>
-            <div><h4>100% Authentic Himalayan Salt</h4><p>Pure, mineral-rich and never processed.</p></div>
-          </div>
-          <span class="ftc__div"></span>
-          <div class="ftc__item">
-            <span class="ftc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3l7 7-9 9H5v-7z"/><path d="M11 6l7 7"/></svg></span>
-            <div><h4>Handcrafted by Skilled Artisans</h4><p>Made by hand, shaped by tradition.</p></div>
-          </div>
-          <span class="ftc__div"></span>
-          <div class="ftc__item">
-            <span class="ftc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span>
-            <div><h4>Worldwide Export</h4><p>Delivered to 50+ countries with care and reliability.</p></div>
-          </div>
-          <span class="ftc__div"></span>
-          <div class="ftc__item">
-            <span class="ftc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h18M3 16h18M3 4h18v16H3zM9 4v4M15 8v4M9 12v4M15 16v4"/></svg></span>
-            <div><h4>Custom Bulk Orders</h4><p>Tailored packaging and private-label solutions.</p></div>
-          </div>
+        <div class="feat-cards__grid">
+          <article class="fcard" data-animate="rise">
+            <span class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l9-18 9 18z"/><path d="M8 15l4-8 4 8"/></svg></span>
+            <h3>100% Authentic Himalayan Salt</h3><p>Pure, mineral-rich and never processed.</p>
+          </article>
+          <article class="fcard" data-animate="rise" data-delay="1">
+            <span class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3l7 7-9 9H5v-7z"/><path d="M11 6l7 7"/></svg></span>
+            <h3>Handcrafted by Skilled Artisans</h3><p>Made by hand, shaped by tradition.</p>
+          </article>
+          <article class="fcard" data-animate="rise" data-delay="2">
+            <span class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span>
+            <h3>Worldwide Export</h3><p>Delivered to 50+ countries with care and reliability.</p>
+          </article>
+          <article class="fcard" data-animate="rise" data-delay="3">
+            <span class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h18M3 16h18M3 4h18v16H3zM9 4v4M15 8v4M9 12v4M15 16v4"/></svg></span>
+            <h3>Custom Bulk Orders</h3><p>Tailored packaging and private-label solutions.</p>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- ===================== OUR STORY ===================== -->
     <section class="section story2">
