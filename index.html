@@ -16,7 +16,7 @@
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <script type="application/ld+json">
   {
@@ -91,21 +91,79 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero2" id="top">
-      <div class="hero2__bg" data-hero-bg>
-        <img src="/assets/lifestyle/hero-backdrop.jpg" alt="" aria-hidden="true">
-      </div>
-      <div class="hero2__wash" aria-hidden="true"></div>
+      <div class="hero2__grad" aria-hidden="true"></div>
+      <div class="hero2__mesh" aria-hidden="true"></div>
       <div class="hero2__vignette" aria-hidden="true"></div>
+      <div class="hero2__noise" aria-hidden="true"></div>
       <canvas class="hero2__dust" data-dust aria-hidden="true"></canvas>
 
       <div class="hero2__stage" aria-hidden="true">
-        <span class="orb" data-depth="14"></span>
-        <span class="blob blob--1" data-depth="26"></span>
-        <span class="blob blob--2" data-depth="40"></span>
-        <span class="blob blob--3" data-depth="18"></span>
-        <img class="floatobj floatobj--rock" src="/assets/lifestyle/float-rock.png" alt="" data-depth="46" onerror="this.remove()">
-        <img class="floatobj floatobj--cluster" src="/assets/lifestyle/float-cluster.png" alt="" data-depth="70" onerror="this.remove()">
-        <img class="floatobj floatobj--lamp" src="/assets/lifestyle/float-lamp.png" alt="" data-depth="32" onerror="this.remove()">
+        <span class="blob blob--1" data-depth="22"></span>
+        <span class="blob blob--2" data-depth="34"></span>
+        <span class="blob blob--3" data-depth="16"></span>
+        <div class="scene" data-hero-scene>
+          <span class="scene__sphere" data-depth="16"></span>
+          <span class="scene__glow" data-depth="10"></span>
+          <svg class="scene__slab" data-depth="30" viewBox="0 0 340 110" aria-hidden="true">
+            <defs>
+              <linearGradient id="slabG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#5A4239"/><stop offset="0.45" stop-color="#3A2822"/><stop offset="1" stop-color="#1C1210"/>
+              </linearGradient>
+              <linearGradient id="slabTop" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#7A5A4C"/><stop offset="0.5" stop-color="#8E6857"/><stop offset="1" stop-color="#594036"/>
+              </linearGradient>
+            </defs>
+            <path d="M14 40 L70 18 L210 10 L300 24 L332 44 L300 64 L236 86 L168 100 L104 90 L48 66 Z" fill="url(#slabG)"/>
+            <path d="M14 40 L70 18 L210 10 L300 24 L332 44 L250 58 L120 60 L48 52 Z" fill="url(#slabTop)" opacity="0.95"/>
+            <path d="M48 52 L120 60 L250 58 L332 44 L300 64 L236 86 L168 100 L104 90 L48 66 Z" fill="#1A100E" opacity="0.55"/>
+          </svg>
+
+          <svg class="scene__crystal" data-depth="52" viewBox="0 0 300 260" aria-hidden="true">
+            <defs>
+              <linearGradient id="cryG" x1="0.1" y1="0" x2="0.9" y2="1">
+                <stop offset="0" stop-color="#FBDDD3"/><stop offset="0.4" stop-color="#F0B4A2"/>
+                <stop offset="0.75" stop-color="#D98F78"/><stop offset="1" stop-color="#B96F58"/>
+              </linearGradient>
+              <linearGradient id="cryLite" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#FFF2EC" stop-opacity="0.95"/><stop offset="1" stop-color="#F6C9BA" stop-opacity="0.15"/>
+              </linearGradient>
+              <radialGradient id="cryCore" cx="0.42" cy="0.5" r="0.55">
+                <stop offset="0" stop-color="#FFD9C6" stop-opacity="0.85"/><stop offset="1" stop-color="#E9A188" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <path d="M54 168 L22 112 L46 62 L96 26 L152 8 L214 30 L258 78 L272 134 L250 190 L196 232 L132 246 L82 214 Z" fill="url(#cryG)"/>
+            <!-- crystalline facets -->
+            <path d="M46 62 L96 26 L152 8 L128 88 L74 104 Z" fill="#FFF4EE" opacity="0.72"/>
+            <path d="M152 8 L214 30 L258 78 L190 104 L128 88 Z" fill="#FAD5C7" opacity="0.62"/>
+            <path d="M258 78 L272 134 L250 190 L160 170 L190 104 Z" fill="#B5674E" opacity="0.5"/>
+            <path d="M250 190 L196 232 L132 246 L160 170 Z" fill="#8F4C37" opacity="0.5"/>
+            <path d="M132 246 L82 214 L54 168 L96 140 L160 170 Z" fill="#C2755B" opacity="0.42"/>
+            <path d="M54 168 L22 112 L46 62 L74 104 L96 140 Z" fill="#D98E74" opacity="0.34"/>
+            <path d="M128 88 L190 104 L160 170 L96 140 L74 104 Z" fill="#FFE3D6" opacity="0.5"/>
+            <ellipse cx="132" cy="128" rx="72" ry="66" fill="url(#cryCore)"/>
+            <!-- crisp highlight edges -->
+            <path d="M96 26 L152 8 L146 26 L104 44 Z" fill="#FFFFFF" opacity="0.5"/>
+            <path d="M128 88 L190 104 L160 170 L96 140 L74 104 Z" fill="none" stroke="#FFF6F1" stroke-width="1" opacity="0.3"/>
+            <path d="M46 62 L128 88 L190 104 L258 78" fill="none" stroke="#FFE9DE" stroke-width="1.1" opacity="0.4"/>
+          </svg>
+
+          <svg class="scene__chip scene__chip--a" data-depth="86" viewBox="0 0 90 80" aria-hidden="true">
+            <path d="M12 52 L4 28 L26 8 L62 4 L84 26 L76 58 L44 76 L20 68 Z" fill="url(#cryG)"/>
+            <path d="M26 8 L62 4 L58 30 L22 34 Z" fill="#FFFFFF" opacity="0.3"/>
+          </svg>
+          <svg class="scene__chip scene__chip--b" data-depth="104" viewBox="0 0 90 80" aria-hidden="true">
+            <path d="M10 46 L6 22 L30 6 L64 8 L84 32 L72 62 L40 74 L18 62 Z" fill="url(#cryG)"/>
+            <path d="M30 6 L64 8 L60 32 L26 32 Z" fill="#FFFFFF" opacity="0.26"/>
+          </svg>
+          <svg class="scene__chip scene__chip--c" data-depth="72" viewBox="0 0 90 80" aria-hidden="true">
+            <path d="M14 50 L8 26 L28 8 L60 6 L82 30 L74 60 L42 74 L20 64 Z" fill="url(#cryG)"/>
+            <path d="M28 8 L60 6 L56 28 L24 30 Z" fill="#FFFFFF" opacity="0.28"/>
+          </svg>
+          <svg class="scene__chip scene__chip--d" data-depth="120" viewBox="0 0 90 80" aria-hidden="true">
+            <path d="M12 48 L6 24 L28 6 L62 6 L82 30 L72 60 L40 74 L18 62 Z" fill="url(#cryG)"/>
+          </svg>
+
+        </div>
       </div>
 
       <div class="container hero2__inner">

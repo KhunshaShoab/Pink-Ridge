@@ -1301,3 +1301,111 @@ body.at-top .site-header .hamburger span { background: #fff; }
 .magnetic { transition: transform .3s var(--ease), background .35s var(--ease), color .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease); will-change: transform; }
 .btn--light { background: #fff; color: var(--dark); }
 .btn--light:hover { background: #fff; color: var(--dark); box-shadow: 0 18px 34px -16px rgba(20,10,6,0.5); }
+
+/* ==========================================================================
+   HOME v5 — PIXEL-MATCH PASS (mockup recreation)
+   dark brown gradient hero · glass sphere · floating salt crystal scene
+   ========================================================================== */
+h1, h2, .hero2__title, .story2__body h2, .why2__head h2, .final-cta h2,
+.section-head h2, .ftc__item h4, .wnode h4, .tile__label {
+  font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+}
+
+/* ---- Announcement bar: warm rose strip ---- */
+.topbar { background: linear-gradient(90deg, #B87F72 0%, #C68C7C 50%, #B87F72 100%); color: #FFF1EC; height: 42px; }
+.topbar__text { color: #FFF1EC; font-size: 0.63rem; letter-spacing: 0.26em; font-weight: 600; }
+.topbar__text span { color: #F6D6CD; margin: 0 0.75rem; }
+body.at-top .topbar { background: linear-gradient(90deg, #B87F72 0%, #C68C7C 50%, #B87F72 100%); color: #FFF1EC; }
+body.at-top .topbar__text { color: #FFF1EC; }
+
+/* ---- Navbar reads light over the dark hero ---- */
+body.at-top .site-header .navbar { background: rgba(52,32,25,0.28); border-color: rgba(255,255,255,0.22); }
+body.at-top .site-header .navbar .nav-cta { background: var(--btn); color: #fff; }
+.nav-cta:hover { box-shadow: 0 0 0 4px rgba(212,143,122,0.22), 0 12px 26px -12px rgba(189,117,89,0.8); }
+.brand__logo { background: rgba(255,255,255,0.94); }
+
+/* ==========================================================================
+   HERO — dark brown gradient, no photograph
+   ========================================================================== */
+.hero2 { background: #17110F; }
+.hero2__grad { position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(58% 68% at 74% 46%, rgba(196,116,88,0.52) 0%, rgba(150,84,62,0.22) 45%, transparent 68%),
+    radial-gradient(42% 46% at 90% 24%, rgba(235,168,155,0.26) 0%, transparent 62%),
+    linear-gradient(112deg, #120D0B 0%, #1F1511 30%, #33201A 58%, #4A2C20 86%, #5A3626 100%); }
+.hero2__mesh { position: absolute; inset: -20%; z-index: 0; pointer-events: none; opacity: 0.55;
+  background:
+    radial-gradient(28% 30% at 30% 70%, rgba(189,117,89,0.30), transparent 62%),
+    radial-gradient(24% 26% at 78% 76%, rgba(235,168,155,0.22), transparent 62%);
+  animation: meshDrift 26s ease-in-out infinite alternate; }
+@keyframes meshDrift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(2.5%, -2%, 0) scale(1.08); } }
+.hero2__vignette { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: radial-gradient(110% 78% at 62% 46%, transparent 38%, rgba(10,6,5,0.62) 100%); }
+.hero2__noise { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0.045; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.blob { opacity: 0.42; }
+.blob--1 { top: 26%; right: 34%; }
+.blob--2 { bottom: 6%; right: 8%; }
+.blob--3 { top: 58%; right: 50%; }
+
+/* ---- Floating salt-crystal scene (right side) ---- */
+.scene { position: absolute; top: 50%; right: 3%; width: min(50vw, 660px); aspect-ratio: 1; transform: translateY(-50%); }
+.scene__sphere { position: absolute; inset: 3%; border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255,222,208,0.20) 0%, rgba(150,86,64,0.24) 38%, rgba(46,26,20,0.44) 62%, rgba(24,14,11,0.30) 78%, transparent 80%);
+  border: 1px solid rgba(240,180,164,0.20);
+  box-shadow: inset 0 0 90px rgba(255,205,188,0.14), 0 0 120px rgba(180,100,74,0.28);
+  animation: breathe 11s ease-in-out infinite; }
+.scene__glow { position: absolute; left: 16%; top: 16%; width: 68%; height: 68%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(235,168,155,0.34), transparent 66%); filter: blur(28px); animation: breathe 9s ease-in-out infinite reverse; }
+@keyframes breathe { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.045); opacity: 0.9; } }
+
+.scene svg { position: absolute; overflow: visible; }
+.scene__crystal { width: 47%; left: 25%; top: 24%; filter: drop-shadow(0 34px 44px rgba(20,10,6,0.6)) drop-shadow(0 0 46px rgba(235,150,125,0.4));
+  animation: floatY 14s ease-in-out infinite; }
+.scene__slab { width: 60%; left: 19%; top: 57%; filter: drop-shadow(0 26px 34px rgba(10,6,4,0.66)); animation: floatY 14s ease-in-out infinite; }
+.scene__chip { filter: drop-shadow(0 12px 18px rgba(20,10,6,0.5)) drop-shadow(0 0 18px rgba(235,150,125,0.35)); }
+.scene__chip--a { width: 9%;  top: 10%; right: 20%; animation: floatSpin 10s ease-in-out infinite; }
+.scene__chip--b { width: 6.5%; top: 22%; right: 4%;  animation: floatSpin 13s ease-in-out infinite reverse; }
+.scene__chip--c { width: 7.5%; top: 62%; right: 6%;  animation: floatSpin 16s ease-in-out infinite; }
+.scene__chip--d { width: 5%;  top: 46%; left: 8%;    animation: floatSpin 12s ease-in-out infinite reverse; }
+@keyframes floatSpin { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-26px) rotate(6deg); } }
+@media (max-width: 1100px) { .scene { width: 56vw; right: -6%; opacity: 0.75; } }
+@media (max-width: 900px)  { .scene { display: none; } }
+
+/* hero text sits above the scene */
+.hero2__inner { z-index: 5; }
+.hero2__label { color: #EBA89B; }
+
+/* ==========================================================================
+   OUR STORY — pink circle + thin ring, matching mockup composition
+   ========================================================================== */
+.story2__media { padding: 6% 4%; }
+.story2__circle { width: min(88%, 470px); background: radial-gradient(circle at 46% 40%, #F7DDD6 0%, #EFB6A8 55%, #DE9781 100%); }
+.story2__media::after { content: ""; position: absolute; z-index: 0; width: min(104%, 560px); aspect-ratio: 1;
+  top: 50%; left: 50%; transform: translate(-50%,-50%); border-radius: 50%; border: 1px solid rgba(189,117,89,0.28); }
+.story2__media img { aspect-ratio: 1; border-radius: 22px; }
+
+/* ==========================================================================
+   WHY BAND — glowing connector line
+   ========================================================================== */
+.why2 { background: linear-gradient(135deg, #6B4034 0%, #8B5546 38%, #A9694F 68%, #C0805F 100%); }
+.why2__line path { stroke: rgba(246,214,205,0.55); stroke-dasharray: none; stroke-width: 1.2;
+  filter: drop-shadow(0 0 6px rgba(246,214,205,0.65)); }
+.wnode__ring { border-color: rgba(246,214,205,0.55); box-shadow: 0 0 22px rgba(246,214,205,0.25), inset 0 0 18px rgba(255,255,255,0.06); }
+
+/* ==========================================================================
+   CARD TILT + GLOW (collections / trust)
+   ========================================================================== */
+.tile { transform-style: preserve-3d; }
+.tile:hover { box-shadow: 0 40px 74px -32px rgba(189,117,89,0.62), 0 0 0 1px rgba(235,168,155,0.35); }
+.trust-card, .ftc { will-change: transform; }
+.ftc { background: rgba(253,244,241,0.92); }
+
+/* Our Story: keep the blush circle visible around the image (mockup composition) */
+.story2__media { padding: 9% 6%; }
+.story2__circle { width: min(94%, 500px); }
+.story2__media img { width: 74%; margin-inline: auto; box-shadow: 0 34px 60px -28px rgba(43,33,31,0.55); }
+.story2__media::after { width: min(112%, 590px); }
+/* align the glowing connector through the icon circle centres */
+.why2__line { top: -22px; }

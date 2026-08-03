@@ -9,7 +9,7 @@
 
   /* Scroll-aware header + transparent nav over full-bleed hero */
   var header = document.querySelector('.site-header');
-  var hasHeroFull = !!document.querySelector('.hero-full');
+  var hasHeroFull = !!document.querySelector('.hero-full, .hero2');
   function onScroll() {
     var scrolled = window.scrollY > 24;
     if (header) header.classList.toggle('scrolled', scrolled);
