@@ -169,4 +169,23 @@
 
   /* Year */
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+  /* Subtle parallax on full-bleed bands */
+  var pxItems = Array.prototype.slice.call(document.querySelectorAll('[data-parallax] .parallax__bg'));
+  if (pxItems.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var pxTick = false;
+    function pxUpdate() {
+      pxTick = false;
+      var vh = window.innerHeight;
+      pxItems.forEach(function (img) {
+        var r = img.parentNode.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) return;
+        var progress = (r.top + r.height / 2 - vh / 2) / vh; /* -1..1 */
+        img.style.transform = 'translate3d(0,' + (progress * 7).toFixed(2) + '%,0) scale(1.14)';
+      });
+    }
+    window.addEventListener('scroll', function () { if (!pxTick) { pxTick = true; requestAnimationFrame(pxUpdate); } }, { passive: true });
+    window.addEventListener('resize', pxUpdate);
+    pxUpdate();
+  }
 })();

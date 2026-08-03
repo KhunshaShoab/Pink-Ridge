@@ -953,3 +953,177 @@ body.at-top .site-header .brand__logo { background: rgba(255,255,255,0.9); }
 .hero-full__box { max-width: 640px; }
 .hero-full__sub { color: rgba(255,255,255,0.9); font-size: 1.02rem; max-width: 42ch; margin: 1.3rem 0 2rem; }
 .hero-full__scrim { background: linear-gradient(to top, rgba(24,17,13,0.78) 0%, rgba(24,17,13,0.32) 34%, rgba(24,17,13,0.12) 62%, rgba(24,17,13,0.34) 100%); }
+
+/* ==========================================================================
+   HOME REDESIGN v3 — Seed-inspired · warm palette · single glass navbar
+   (authoritative overrides — appended last so cascade wins)
+   ========================================================================== */
+:root {
+  --ivory:  #F8F1ED;   /* primary background */
+  --beige:  #F3E7E1;   /* soft secondary */
+  --peach:  #F3D1CB;   /* secondary background / accent bands */
+  --white:  #FFFFFF;
+  --accent: #EBA89B;   /* accent */
+  --btn:    #D48F7A;   /* buttons */
+  --btn-hover: #BD7559;/* dark accent */
+  --brown:  #BD7559;   /* dark accent — links, eyebrows */
+  --brown-deep: #9E5F45;
+  --dark:   #342B28;   /* text / dark bands */
+  --dark-2: #241E1B;
+  --text:      #342B28;
+  --text-soft: #7C6A61;
+  --text-mute: #A99A90;
+  --line:      #EBDBD3;
+}
+::selection { background: var(--accent); color: var(--dark); }
+
+/* ---- Buttons in new palette ---- */
+.btn--primary { background: var(--btn); color: #fff; }
+.btn--primary:hover { background: var(--btn-hover); color: #fff; }
+.btn--light { background: #fff; color: var(--dark); }
+.btn--light:hover { background: var(--peach); color: var(--dark); }
+.btn--dark { background: var(--dark); color: #fff; }
+.btn--dark:hover { background: var(--btn-hover); color: #fff; }
+
+/* ---- Announcement bar ---- */
+.topbar { background: var(--dark); color: #F3E1D9; height: 42px; }
+.topbar__text { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: #F1DFD6; margin: 0; }
+.topbar__text span { color: var(--accent); margin: 0 0.7rem; }
+
+/* ==========================================================================
+   Single premium glass navbar (logo left · links centered · CTA right)
+   ========================================================================== */
+:root { --topbar-h: 42px; }
+.site-header { top: var(--topbar-h); }
+.site-header > .container { padding-top: 0.7rem; }
+.navbar {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem;
+  padding: 0.55rem 0.7rem 0.55rem 1.15rem;
+  background: rgba(248, 241, 237, 0.7);
+  -webkit-backdrop-filter: saturate(160%) blur(16px); backdrop-filter: saturate(160%) blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 16px 44px -24px rgba(52, 43, 40, 0.55);
+  transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.site-header.scrolled .navbar { background: rgba(248, 241, 237, 0.92); box-shadow: 0 12px 34px -22px rgba(52, 43, 40, 0.5); border-color: rgba(255,255,255,0.75); }
+.navbar .brand { justify-self: start; }
+.navbar .nav { justify-self: center; }
+.navbar__right { justify-self: end; display: flex; align-items: center; gap: 0.4rem; }
+.brand__logo { height: 52px; width: 52px; }
+.brand__name { font-size: 1.4rem; letter-spacing: 0.05em; }
+.nav-cta { border-radius: 999px; padding: 0.8rem 1.5rem; transition: background 0.35s var(--ease), transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 22px -12px rgba(189, 117, 89, 0.7); }
+.nav a::after, .nav a:hover::after, .nav a[aria-current="page"]::after { background: var(--brown); }
+
+/* transparent-over-hero state for the single navbar */
+body.at-top .topbar { background: transparent; color: #fff; }
+body.at-top .topbar__text { color: #fff; }
+body.at-top .topbar__text span { color: var(--accent); }
+body.at-top .site-header .navbar {
+  background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3);
+  box-shadow: none; -webkit-backdrop-filter: saturate(140%) blur(10px); backdrop-filter: saturate(140%) blur(10px);
+}
+body.at-top .site-header .brand__name { color: #fff; }
+body.at-top .site-header .nav a, body.at-top .site-header .dropdown__toggle { color: #fff; }
+body.at-top .site-header .nav a::after { background: #fff; }
+body.at-top .site-header .hamburger span { background: #fff; }
+
+@media (max-width: 1023px) {
+  .navbar { grid-template-columns: auto 1fr; padding: 0.5rem 0.6rem 0.5rem 0.9rem; }
+  .navbar .nav { display: none; }
+  .navbar__right { grid-column: 2; }
+  .navbar__right .nav-cta { display: none; }
+  .brand__logo { height: 46px; width: 46px; }
+}
+
+/* ==========================================================================
+   HERO — content anchored lower-left, cinematic
+   ========================================================================== */
+.hero-full { min-height: 100vh; align-items: center; }
+.hero-full__inner { padding-top: calc(var(--topbar-h) + 80px); padding-bottom: clamp(3rem, 8vh, 6rem); }
+.hero-full__box { max-width: 620px; margin-top: auto; }
+.hero-full__eyebrow { color: var(--accent); }
+.hero-full__title { font-size: clamp(3rem, 6.6vw, 5.6rem); line-height: 1.03; letter-spacing: -0.02em; }
+.hero-full__title em { font-style: italic; color: var(--accent); }
+.hero-full__scrim { background: linear-gradient(90deg, rgba(30,22,18,0.72) 0%, rgba(30,22,18,0.45) 42%, rgba(30,22,18,0.15) 72%, rgba(30,22,18,0.32) 100%); }
+
+/* ==========================================================================
+   TRUST STRIP — 4 soft cards right after hero
+   ========================================================================== */
+.trust { background: var(--ivory); padding-block: clamp(3.5rem, 7vw, 6rem); }
+.trust__grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 940px) { .trust__grid { grid-template-columns: repeat(4, 1fr); } }
+.trust-card {
+  text-align: center; padding: clamp(2rem, 3.5vw, 2.8rem) 1.5rem;
+  background: var(--white); border: 1px solid var(--line); border-radius: 24px;
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+}
+.trust-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -30px rgba(52,43,40,0.4); border-color: var(--accent); }
+.trust-card__icon { width: 58px; height: 58px; margin: 0 auto 1.3rem; display: grid; place-items: center; border-radius: 50%; background: var(--peach); color: var(--brown-deep); }
+.trust-card__icon svg { width: 26px; height: 26px; }
+.trust-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.trust-card p { font-size: 0.86rem; line-height: 1.6; }
+
+/* ==========================================================================
+   FEATURED COLLECTIONS — large editorial tiles
+   ========================================================================== */
+.feat-grid { display: grid; gap: clamp(1.1rem, 2.4vw, 2rem); grid-template-columns: 1fr; }
+@media (min-width: 620px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .feat-grid { grid-template-columns: repeat(4, 1fr); } }
+.feat { position: relative; display: block; overflow: hidden; border-radius: 24px; background: var(--dark); isolation: isolate; }
+.feat__media { aspect-ratio: 3/4; overflow: hidden; }
+.feat__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.feat:hover .feat__media img { transform: scale(1.07); }
+.feat::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,20,16,0.72) 0%, rgba(28,20,16,0.12) 48%, rgba(28,20,16,0) 72%); z-index: 1; }
+.feat__body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 1.5rem 1.5rem 1.6rem; color: #fff; }
+.feat__body h3 { color: #fff; font-size: 1.5rem; margin-bottom: 0.2rem; }
+.feat__link { display: inline-flex; align-items: center; gap: 0.45rem; font-family: var(--sans); font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(255,255,255,0.85); }
+.feat__link .arrow { width: 14px; height: 14px; transition: transform 0.4s var(--ease); }
+.feat:hover .feat__link .arrow { transform: translateX(5px); }
+.feat:hover .feat__link { color: var(--accent); }
+
+/* ==========================================================================
+   WHY PINK RIDGE — alternating editorial rows
+   ========================================================================== */
+.why-alt { display: flex; flex-direction: column; gap: clamp(2.5rem, 5vw, 4.5rem); }
+.why-alt__row { display: grid; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; grid-template-columns: 1fr; }
+@media (min-width: 860px) {
+  .why-alt__row { grid-template-columns: 5rem 1fr; }
+  .why-alt__row:nth-child(even) { grid-template-columns: 1fr 5rem; }
+  .why-alt__row:nth-child(even) .why-alt__mark { order: 2; }
+  .why-alt__row:nth-child(even) .why-alt__text { text-align: right; }
+  .why-alt__row:nth-child(even) .why-alt__text .link-line { flex-direction: row-reverse; }
+}
+.why-alt__mark { display: flex; align-items: center; gap: 1rem; }
+.why-alt__icon { width: 66px; height: 66px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--peach); color: var(--brown-deep); }
+.why-alt__icon svg { width: 30px; height: 30px; }
+.why-alt__num { font-family: var(--serif); font-style: italic; font-size: 2.4rem; color: var(--accent); }
+@media (min-width: 860px) { .why-alt__num { display: none; } }
+.why-alt__text h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 0.6rem; }
+.why-alt__text p { max-width: 52ch; margin-inline: 0; }
+.why-alt__row:nth-child(even) .why-alt__text p { margin-left: auto; }
+
+/* ==========================================================================
+   PARALLAX BAND — full width, fixed background, minimal overlay text
+   ========================================================================== */
+.parallax { position: relative; min-height: 78vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+.parallax__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transform: scale(1.14); will-change: transform; }
+.parallax::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(28,20,16,0.5), rgba(28,20,16,0.4)); }
+.parallax__inner { position: relative; z-index: 2; color: #fff; max-width: 720px; padding-inline: var(--gutter); }
+.parallax__inner .eyebrow { color: var(--accent); }
+.parallax__inner h2 { color: #fff; font-size: clamp(2.2rem, 5vw, 4rem); }
+@media (max-width: 900px) { .parallax { min-height: 58vh; } }
+
+/* ==========================================================================
+   FINAL CTA — "Let's Build Something Exceptional."
+   ========================================================================== */
+.final-cta { background: var(--peach); text-align: center; }
+.final-cta h2 { font-size: clamp(2.3rem, 5vw, 3.8rem); margin-bottom: 0.9rem; }
+.final-cta p { max-width: 48ch; margin: 0 auto 2.2rem; color: var(--text-soft); }
+.final-cta .btn-row { justify-content: center; }
+.final-cta .btn--whatsapp { background: var(--wa); }
+
+/* Our Story label + heading rhythm reused via .split (already styled) */
+.story-label { color: var(--brown); }
+.btn--lg { padding: 1.05rem 2rem; font-size: 0.74rem; }
