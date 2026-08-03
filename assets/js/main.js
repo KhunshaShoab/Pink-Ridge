@@ -188,4 +188,73 @@
     window.addEventListener('resize', pxUpdate);
     pxUpdate();
   }
+
+  /* ---------------- HERO: dust particles ---------------- */
+  var dust = document.querySelector('[data-dust]');
+  if (dust && !reduce) {
+    var dctx = dust.getContext('2d'), dp = [], DPR = Math.min(window.devicePixelRatio || 1, 2);
+    function dsize() {
+      var r = dust.parentElement.getBoundingClientRect();
+      dust.width = r.width * DPR; dust.height = r.height * DPR;
+      var n = Math.round((r.width * r.height) / 26000);
+      dp = []; for (var i = 0; i < n; i++) dp.push({
+        x: Math.random() * dust.width, y: Math.random() * dust.height,
+        r: (Math.random() * 1.6 + 0.4) * DPR, s: Math.random() * 0.28 + 0.05,
+        d: Math.random() * Math.PI * 2, o: Math.random() * 0.5 + 0.2
+      });
+    }
+    dsize(); window.addEventListener('resize', dsize);
+    (function drawDust() {
+      dctx.clearRect(0, 0, dust.width, dust.height);
+      for (var i = 0; i < dp.length; i++) {
+        var p = dp[i]; p.y -= p.s; p.x += Math.sin(p.d += 0.01) * 0.25;
+        if (p.y < -6) { p.y = dust.height + 6; p.x = Math.random() * dust.width; }
+        dctx.beginPath(); dctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        dctx.fillStyle = 'rgba(245,220,206,' + p.o + ')'; dctx.fill();
+      }
+      requestAnimationFrame(drawDust);
+    })();
+  }
+
+  /* ---------------- HERO: depth parallax (mouse + scroll) ---------------- */
+  var stage = document.querySelector('.hero2');
+  if (stage && !reduce) {
+    var depthEls = Array.prototype.slice.call(stage.querySelectorAll('[data-depth]'));
+    var heroBg = stage.querySelector('[data-hero-bg]');
+    var mx = 0, my = 0, cx = 0, cy = 0, sY = 0, raf = false;
+    stage.addEventListener('mousemove', function (e) {
+      var r = stage.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width - 0.5;
+      my = (e.clientY - r.top) / r.height - 0.5;
+      req();
+    });
+    stage.addEventListener('mouseleave', function () { mx = 0; my = 0; req(); });
+    window.addEventListener('scroll', function () { sY = window.pageYOffset; req(); }, { passive: true });
+    function req() { if (!raf) { raf = true; requestAnimationFrame(loop); } }
+    function loop() {
+      raf = false;
+      cx += (mx - cx) * 0.08; cy += (my - cy) * 0.08;
+      depthEls.forEach(function (el) {
+        var d = parseFloat(el.getAttribute('data-depth')) || 20;
+        var tx = cx * d, ty = cy * d - (sY * d * 0.02);
+        el.style.transform = 'translate3d(' + tx.toFixed(2) + 'px,' + ty.toFixed(2) + 'px,0)';
+      });
+      if (heroBg) heroBg.style.transform = 'translate3d(' + (cx * 10).toFixed(2) + 'px,' + (sY * 0.18).toFixed(2) + 'px,0)';
+      if (Math.abs(mx - cx) > 0.001 || Math.abs(my - cy) > 0.001) req();
+    }
+  }
+
+  /* ---------------- Magnetic buttons ---------------- */
+  if (!reduce && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.magnetic').forEach(function (el) {
+      var mraf = false, tx = 0, ty = 0;
+      el.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect();
+        tx = (e.clientX - r.left - r.width / 2) * 0.28;
+        ty = (e.clientY - r.top - r.height / 2) * 0.4;
+        if (!mraf) { mraf = true; requestAnimationFrame(function () { mraf = false; el.style.transform = 'translate(' + tx + 'px,' + ty + 'px)'; }); }
+      });
+      el.addEventListener('mouseleave', function () { el.style.transform = 'translate(0,0)'; });
+    });
+  }
 })();
