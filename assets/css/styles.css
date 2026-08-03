@@ -916,3 +916,40 @@ body.at-top .site-header .brand__logo { background: rgba(255,255,255,0.9); }
 .shop-block { background: #2E231D; }
 .shop-card { border-radius: 14px; }
 .shop-card__tag { background: rgba(255,255,255,0.9); color: var(--dark); }
+
+/* ==========================================================================
+   PREMIUM HOME v2 — statement, moment band, minimal why-row
+   ========================================================================== */
+.statement { padding-block: clamp(6rem, 12vw, 12rem); }
+.statement__text { font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 4vw, 3.2rem);
+  line-height: 1.28; letter-spacing: -0.01em; color: var(--dark); max-width: 22ch; margin: 1.4rem auto 0; }
+.statement__text em { font-style: italic; color: var(--brown); }
+
+/* Full-width lifestyle "moment" band */
+.moment { position: relative; min-height: 66vh; display: flex; align-items: center; overflow: hidden; }
+.moment__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.moment__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(28,20,16,0.62) 0%, rgba(28,20,16,0.28) 45%, rgba(28,20,16,0.1) 100%); }
+.moment__inner { position: relative; z-index: 2; color: #fff; max-width: 620px; }
+.moment__inner .eyebrow { color: rgba(255,255,255,0.82); }
+.moment__inner h2 { color: #fff; font-size: clamp(2rem, 4.4vw, 3.4rem); margin-bottom: 1.6rem; }
+@media (max-width:640px){ .moment { min-height: 60vh; } }
+
+/* Minimal why-row (typographic, thin dividers, no big icons) */
+.why-row { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 720px){ .why-row { grid-template-columns: repeat(4,1fr); } }
+.why-item { padding: 2rem 1.6rem; border-top: 1px solid var(--line); }
+@media (min-width: 720px){ .why-item { border-top: 1px solid var(--line); border-right: 1px solid var(--line); padding: 0 1.6rem; }
+  .why-item:last-child { border-right: 0; } .why-item { border-top: 0; } }
+.why-num { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--brown); display: block; margin-bottom: 1rem; }
+.why-item h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.why-item p { font-size: 0.9rem; }
+
+/* Clean centered CTA */
+.cta-quiet { text-align: center; }
+.cta-quiet h2 { margin-bottom: 0.7rem; }
+.cta-quiet p { max-width: 46ch; margin: 0 auto 2rem; }
+
+/* hero single bottom-left text box */
+.hero-full__box { max-width: 640px; }
+.hero-full__sub { color: rgba(255,255,255,0.9); font-size: 1.02rem; max-width: 42ch; margin: 1.3rem 0 2rem; }
+.hero-full__scrim { background: linear-gradient(to top, rgba(24,17,13,0.78) 0%, rgba(24,17,13,0.32) 34%, rgba(24,17,13,0.12) 62%, rgba(24,17,13,0.34) 100%); }
