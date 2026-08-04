@@ -91,8 +91,12 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero2" id="top">
+      <!-- layered cinematic background -->
       <div class="hero2__bg" data-hero-bg aria-hidden="true"><img src="/assets/scene/hero-bg.jpg" alt=""></div>
+      <div class="hero2__blur" aria-hidden="true"></div>
       <div class="hero2__grad" aria-hidden="true"></div>
+      <div class="hero2__amber" aria-hidden="true"></div>
+      <div class="hero2__smoke" aria-hidden="true"></div>
       <div class="hero2__vignette" aria-hidden="true"></div>
       <img class="hero2__dustlayer" src="/assets/scene/dust.png" alt="" aria-hidden="true" data-depth="10">
       <canvas class="hero2__dust" data-dust aria-hidden="true"></canvas>
@@ -100,7 +104,7 @@
       <div class="container hero2__inner">
         <div class="hero2__content">
           <span class="hero2__label" data-animate="rise">Nature's Purity. Crafted to Perfection.</span>
-          <h1 class="hero2__title" data-animate="rise" data-delay="1">The World's<br>Finest Himalayan<br><em>Pink Salt</em>.</h1>
+          <h1 class="hero2__title" data-animate="rise" data-delay="1">The World's<br>Finest Himalayan<br><em>Pink Salt.</em></h1>
           <p class="hero2__desc" data-animate="rise" data-delay="2">Mined from ancient Himalayan ranges and handcrafted with care, our pink salt brings purity, beauty and wellness to homes and industries around the globe.</p>
           <div class="btn-row" data-animate="rise" data-delay="3">
             <a href="/products.html" class="btn btn--light magnetic">Explore Collection</a>
@@ -110,13 +114,14 @@
 
         <div class="hero2__right">
           <div class="scene" data-hero-scene aria-hidden="true">
-            <img class="scene__orb"      src="/assets/scene/orb.png"       alt="" data-depth="14">
+            <img class="scene__orb" src="/assets/scene/orb.png" alt="" data-depth="12">
+            <span class="scene__halo" data-depth="18"></span>
             <span class="scene__glow"></span>
-            <img class="scene__platform" src="/assets/scene/platform.png"  alt="" data-depth="34">
-            <img class="scene__crystal"  src="/assets/scene/crystal.png"   alt="" data-depth="54">
-            <img class="scene__frag scene__frag--a" src="/assets/scene/fragments.png" alt="" data-depth="78">
-            <img class="scene__frag scene__frag--b" src="/assets/scene/fragments.png" alt="" data-depth="96">
-            <img class="scene__frag scene__frag--c" src="/assets/scene/fragments.png" alt="" data-depth="64">
+            <img class="scene__platform" src="/assets/scene/platform.png" alt="" data-depth="30">
+            <img class="scene__crystal"  src="/assets/scene/crystal.png"  alt="" data-depth="46">
+            <img class="scene__frag scene__frag--a" src="/assets/scene/fragments.png" alt="" data-depth="74">
+            <img class="scene__frag scene__frag--b" src="/assets/scene/fragments.png" alt="" data-depth="92">
+            <img class="scene__frag scene__frag--c" src="/assets/scene/fragments.png" alt="" data-depth="60">
           </div>
           <a href="/about.html" class="hero2__play magnetic" data-animate="fade" data-delay="3" aria-label="Watch our story">
             <span class="hero2__play-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -126,26 +131,87 @@
       </div>
     </section>
 
-    <!-- ===================== FEATURE CARDS ===================== -->
-    <section class="feat-cards">
+    <!-- ===================== COLLECTIONS ===================== -->
+    <section class="section collections2">
+      <svg class="streaks streaks--l" viewBox="0 0 400 900" fill="none" aria-hidden="true">
+        <path d="M-40 40 C 190 210, 190 470, -30 700" stroke="url(#sg)" stroke-width="1.4"/>
+        <path d="M-70 120 C 150 280, 150 520, -60 760" stroke="url(#sg)" stroke-width="1"/>
+        <path d="M-100 210 C 110 340, 110 540, -90 820" stroke="url(#sg)" stroke-width="0.8"/>
+        <defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#E6B8A9" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#E6B8A9" stop-opacity="0.55"/>
+          <stop offset="1" stop-color="#C68C79" stop-opacity="0"/>
+        </linearGradient></defs>
+      </svg>
+      <svg class="streaks streaks--r" viewBox="0 0 400 900" fill="none" aria-hidden="true">
+        <path d="M440 60 C 210 230, 210 480, 430 720" stroke="url(#sg2)" stroke-width="1.4"/>
+        <path d="M470 150 C 250 300, 250 540, 460 780" stroke="url(#sg2)" stroke-width="1"/>
+        <defs><linearGradient id="sg2" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#E6B8A9" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#E6B8A9" stop-opacity="0.5"/>
+          <stop offset="1" stop-color="#C68C79" stop-opacity="0"/>
+        </linearGradient></defs>
+      </svg>
       <div class="container">
-        <div class="feat-cards__grid">
-          <article class="fcard" data-animate="rise">
-            <span class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l9-18 9 18z"/><path d="M8 15l4-8 4 8"/></svg></span>
-            <h3>100% Authentic Himalayan Salt</h3><p>Pure, mineral-rich and never processed.</p>
-          </article>
-          <article class="fcard" data-animate="rise" data-delay="1">
-            <span class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3l7 7-9 9H5v-7z"/><path d="M11 6l7 7"/></svg></span>
-            <h3>Handcrafted by Skilled Artisans</h3><p>Made by hand, shaped by tradition.</p>
-          </article>
-          <article class="fcard" data-animate="rise" data-delay="2">
-            <span class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span>
-            <h3>Worldwide Export</h3><p>Delivered to 50+ countries with care and reliability.</p>
-          </article>
-          <article class="fcard" data-animate="rise" data-delay="3">
-            <span class="fcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h18M3 16h18M3 4h18v16H3zM9 4v4M15 8v4M9 12v4M15 16v4"/></svg></span>
-            <h3>Custom Bulk Orders</h3><p>Tailored packaging and private-label solutions.</p>
-          </article>
+        <div class="section-head center" data-animate><span class="eyebrow center">Our Collections</span><h2>Crafted for Every Purpose</h2></div>
+        <div class="ccard-grid">
+          <a class="ccard ccard--cutout" href="/lamps.html" data-animate="rise" data-tilt>
+            <span class="ccard__media"><img src="/assets/products/png/salt-lamp.png" alt="Salt Lamps — Pink Ridge" loading="lazy"></span>
+            <span class="ccard__body">
+              <h3>Salt Lamps</h3>
+              <p>Illuminate your space with natural warmth.</p>
+              <span class="ccard__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </a>
+          <a class="ccard" href="/decor.html" data-animate="rise" data-delay="1" data-tilt>
+            <span class="ccard__media"><img src="/assets/products/png/home-decor.jpg" alt="Home Decor — Pink Ridge" loading="lazy"></span>
+            <span class="ccard__body">
+              <h3>Home Decor</h3>
+              <p>Elegant salt pieces for a beautiful home.</p>
+              <span class="ccard__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </a>
+          <a class="ccard ccard--cutout" href="/edible.html" data-animate="rise" data-delay="2" data-tilt>
+            <span class="ccard__media"><img src="/assets/products/png/edible-bowl.png" alt="Edible Salt — Pink Ridge" loading="lazy"></span>
+            <span class="ccard__body">
+              <h3>Edible Salt</h3>
+              <p>Pure, natural and packed with minerals.</p>
+              <span class="ccard__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </a>
+          <a class="ccard" href="/bricks.html" data-animate="rise" data-delay="3" data-tilt>
+            <span class="ccard__media"><img src="/assets/products/png/salt-bricks.jpg" alt="Salt Bricks — Pink Ridge" loading="lazy"></span>
+            <span class="ccard__body">
+              <h3>Salt Bricks</h3>
+              <p>Strong, durable and built to last.</p>
+              <span class="ccard__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </a>
+        </div>
+
+        <!-- FEATURE STRIP -->
+        <div class="fstrip" data-animate="rise">
+          <div class="fstrip__panel">
+            <div class="fstrip__item">
+              <span class="fstrip__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l9-18 9 18z"/><path d="M8 15l4-8 4 8"/></svg></span>
+              <div><h4>100% Authentic<br>Himalayan Salt</h4><p>Pure, mineral-rich and never processed.</p></div>
+            </div>
+            <span class="fstrip__div"></span>
+            <div class="fstrip__item">
+              <span class="fstrip__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3l7 7-9 9H5v-7z"/><path d="M11 6l7 7"/></svg></span>
+              <div><h4>Handcrafted by<br>Skilled Artisans</h4><p>Made by hand, shaped by tradition.</p></div>
+            </div>
+            <span class="fstrip__div"></span>
+            <div class="fstrip__item">
+              <span class="fstrip__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span>
+              <div><h4>Worldwide Export</h4><p>Delivered to 50+ countries with care and reliability.</p></div>
+            </div>
+            <span class="fstrip__div"></span>
+            <div class="fstrip__item">
+              <span class="fstrip__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span>
+              <div><h4>Custom Bulk Orders</h4><p>Tailored packaging and private-label solutions.</p></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -167,35 +233,6 @@
       </div>
     </section>
 
-    <!-- ===================== COLLECTIONS ===================== -->
-    <section class="section collections2">
-      <div class="container">
-        <div class="section-head center" data-animate><span class="eyebrow center">Our Collections</span><h2>Crafted for Every Purpose</h2></div>
-        <div class="tile-grid">
-          <a class="tile tile--cutout" href="/lamps.html" data-animate="rise" aria-label="Salt Lamps">
-            <div class="tile__media"><img src="/assets/products/png/salt-lamp.png" alt="Salt Lamps — Pink Ridge" loading="lazy"></div>
-            <span class="tile__label">Salt Lamps</span>
-            <span class="tile__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="tile" href="/decor.html" data-animate="rise" data-delay="1" aria-label="Home Decor">
-            <div class="tile__media"><img src="/assets/products/png/home-decor.jpg" alt="Home Decor — Pink Ridge" loading="lazy"></div>
-            <span class="tile__label">Home Decor</span>
-            <span class="tile__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="tile tile--cutout" href="/edible.html" data-animate="rise" data-delay="2" aria-label="Edible Salt">
-            <div class="tile__media"><img src="/assets/products/png/edible-bowl.png" alt="Edible Salt — Pink Ridge" loading="lazy"></div>
-            <span class="tile__label">Edible Salt</span>
-            <span class="tile__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="tile" href="/bricks.html" data-animate="rise" data-delay="3" aria-label="Salt Bricks">
-            <div class="tile__media"><img src="/assets/products/png/salt-bricks.jpg" alt="Salt Bricks — Pink Ridge" loading="lazy"></div>
-            <span class="tile__label">Salt Bricks</span>
-            <span class="tile__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== WHY PINK RIDGE ===================== -->
     <section class="why2">
       <div class="why2__glow" aria-hidden="true"></div>
@@ -205,7 +242,7 @@
           <h2>Setting the Standard in <em>Pink Salt</em>.</h2>
         </div>
         <div class="why2__grid">
-          <svg class="why2__line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M60 60 C 250 6, 420 118, 560 60 S 850 6, 940 60" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5" stroke-dasharray="4 6"/></svg>
+          <svg class="why2__line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M60 60 C 250 6, 420 118, 560 60 S 850 6, 940 60" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/></svg>
           <div class="wnode" data-animate="rise">
             <span class="wnode__ring"><span class="wnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l9-18 9 18z"/><path d="M8 15l4-8 4 8"/></svg></span></span>
             <h4>Single-source Himalayan Salt</h4><p>Mined from a single pristine range.</p>
@@ -219,7 +256,7 @@
             <h4>Export-quality Packaging</h4><p>Secure, clean and designed for global standards.</p>
           </div>
           <div class="wnode" data-animate="rise" data-delay="3">
-            <span class="wnode__ring"><span class="wnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span></span>
+            <span class="wnode__ring"><span class="wnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span></span>
             <h4>Global Supply Capability</h4><p>Reliable bulk supply for businesses worldwide.</p>
           </div>
         </div>

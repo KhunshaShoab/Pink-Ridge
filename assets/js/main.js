@@ -261,6 +261,23 @@
     }
   }
 
+  /* ---------------- Card tilt ---------------- */
+  if (!reduce && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('[data-tilt]').forEach(function (el) {
+      var traf = false, rx = 0, ry = 0, lift = 0;
+      el.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect();
+        ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
+        rx = -((e.clientY - r.top) / r.height - 0.5) * 6;
+        lift = -9;
+        if (!traf) { traf = true; requestAnimationFrame(function () { traf = false;
+          el.style.transform = 'translateY(' + lift + 'px) perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+        }); }
+      });
+      el.addEventListener('mouseleave', function () { el.style.transform = ''; });
+    });
+  }
+
   /* ---------------- Magnetic buttons ---------------- */
   if (!reduce && window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('.magnetic').forEach(function (el) {
