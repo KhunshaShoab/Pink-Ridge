@@ -1849,3 +1849,36 @@ body.home .scene__frag--b { opacity: 0.5; }
 body.home .scene__frag--c { opacity: 0.4; }
 /* make sure the cast shadow reads under the floating rock */
 .scene__shadow { top: 86%; width: 50%; left: 26%; }
+
+/* ==========================================================================
+   HOME v10 — COLLECTION CARDS: large full-bleed images, overlaid label
+   ========================================================================== */
+.ccard-grid { gap: clamp(1.1rem, 1.8vw, 1.7rem); }
+.ccard {
+  display: block; position: relative; grid-template-columns: none; padding: 0;
+  aspect-ratio: 4/5; border-radius: 24px; overflow: hidden;
+  background: #1C120F; border: 1px solid var(--edge);
+  box-shadow: 0 30px 60px -34px rgba(0,0,0,0.92);
+}
+.ccard::before { display: none; }
+.ccard__media { position: absolute; inset: 0; border-radius: 0; aspect-ratio: auto; }
+.ccard__media img { width: 100%; height: 100%; object-fit: cover; padding: 0; filter: none; }
+.ccard::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(12,7,6,0.9) 0%, rgba(12,7,6,0.45) 24%, rgba(12,7,6,0.06) 52%, transparent 72%); }
+.ccard__bar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 0.8rem;
+  padding: 1.1rem 1.15rem 1.2rem 1.3rem; }
+.ccard__text { display: block; min-width: 0; }
+.ccard__text strong { display: block; font-family: "Playfair Display","Cormorant Garamond",Georgia,serif;
+  font-weight: 500; font-size: clamp(1.06rem, 1.4vw, 1.3rem); color: var(--ink); line-height: 1.2; }
+.ccard__text em { display: block; font-style: normal; font-size: 0.74rem; line-height: 1.45;
+  color: rgba(248,239,234,0.62); margin-top: 0.28rem;
+  opacity: 0; max-height: 0; overflow: hidden; transition: opacity .5s var(--ease), max-height .5s var(--ease); }
+.ccard:hover .ccard__text em { opacity: 1; max-height: 3.4em; }
+.ccard__go { flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  color: var(--ink); border: 1px solid rgba(255,255,255,0.42);
+  background: rgba(255,255,255,0.14); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.ccard:hover .ccard__go { background: var(--acc-2); border-color: var(--acc-2); color: #1C120F;
+  transform: translateX(3px); box-shadow: 0 0 22px rgba(230,184,169,0.6); }
+@media (min-width: 700px)  { .ccard-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .ccard-grid { grid-template-columns: repeat(4, 1fr); } }
