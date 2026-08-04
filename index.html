@@ -236,16 +236,29 @@
     <!-- ===================== OUR STORY ===================== -->
     <section class="section story2">
       <span class="orbshape orbshape--d" aria-hidden="true"></span>
-      <div class="container split">
+      <svg class="story2__range" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 200 L170 82 L268 130 L392 40 L500 112 L618 58 L742 132 L858 70 L980 118 L1092 48 L1200 124 L1200 200 Z" fill="currentColor"/>
+      </svg>
+      <svg class="story2__stroke" viewBox="0 0 600 600" fill="none" aria-hidden="true">
+        <path d="M40 560 C 150 380, 120 190, 300 60 C 460 -50, 600 120, 560 300" stroke="rgba(180,125,116,0.28)" stroke-width="1"/>
+      </svg>
+      <div class="container split story2__split">
         <div class="story2__media" data-animate="left">
-          <span class="story2__circle" aria-hidden="true"></span>
-          <img src="/assets/scene/story.jpg" alt="Himalayan salt lamp, carved bowls and raw pink salt arranged on dark wood">
+          <span class="story2__halo" aria-hidden="true"></span>
+          <span class="story2__ring story2__ring--1" aria-hidden="true"></span>
+          <span class="story2__ring story2__ring--2" aria-hidden="true"></span>
+          <span class="story2__disc" aria-hidden="true"></span>
+          <img class="story2__orb" src="/assets/scene/story.jpg" alt="Himalayan salt lamp, carved bowls and raw pink salt arranged on dark wood">
+          <img class="story2__chip story2__chip--a" src="/assets/scene/crystal.png" alt="" aria-hidden="true">
+          <img class="story2__chip story2__chip--b" src="/assets/scene/crystal.png" alt="" aria-hidden="true">
+          <span class="mote mote--s1" aria-hidden="true"></span><span class="mote mote--s2" aria-hidden="true"></span>
+          <span class="mote mote--s3" aria-hidden="true"></span>
         </div>
         <div class="story2__body" data-animate="right">
           <span class="eyebrow story-label">Our Story</span>
           <h2>Rooted in Nature.<br>Refined by Human Hands.</h2>
-          <p class="mt-2">Pink Ridge was born from a simple belief — that nature creates perfectly, and we should only enhance it with care.</p>
-          <p class="mt-2">From extraction to finishing, every piece of our salt is handled with respect, tradition and a commitment to unmatched quality.</p>
+          <p class="story2__lede">Pink Ridge was born from a simple belief — that nature creates perfectly, and we should only enhance it with care.</p>
+          <p>From extraction to finishing, every piece of our salt is handled with respect, tradition and a commitment to unmatched quality.</p>
           <a href="/about.html" class="btn btn--primary magnetic mt-4">Discover Our Story</a>
         </div>
       </div>
@@ -253,29 +266,48 @@
 
     <!-- ===================== WHY PINK RIDGE ===================== -->
     <section class="why2">
-      <div class="why2__glow" aria-hidden="true"></div>
+      <span class="why2__core" aria-hidden="true"></span>
+      <span class="why2__vignette" aria-hidden="true"></span>
+      <svg class="why2__curves" viewBox="0 0 1400 700" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-40 140 C 320 40, 700 260, 1440 120" stroke="rgba(255,255,255,0.16)" stroke-width="1" fill="none"/>
+        <path d="M-40 560 C 380 660, 760 420, 1440 600" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+        <path d="M-40 340 C 420 250, 820 460, 1440 300" stroke="rgba(255,255,255,0.07)" stroke-width="1" fill="none"/>
+      </svg>
+      <span class="mote mote--1" aria-hidden="true"></span><span class="mote mote--2" aria-hidden="true"></span>
+      <span class="mote mote--3" aria-hidden="true"></span><span class="mote mote--4" aria-hidden="true"></span>
+      <span class="mote mote--5" aria-hidden="true"></span><span class="mote mote--6" aria-hidden="true"></span>
+
       <div class="container why2__inner">
-        <div class="why2__head" data-animate="rise">
-          <span class="eyebrow">Why Pink Ridge</span>
+        <div class="why2__head center" data-animate="rise">
+          <span class="eyebrow center">Why Pink Ridge</span>
           <h2>Setting the Standard in <em>Pink Salt</em>.</h2>
         </div>
-        <div class="why2__grid">
-          <svg class="why2__line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M60 60 C 250 6, 420 118, 560 60 S 850 6, 940 60" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/></svg>
-          <div class="wnode" data-animate="rise">
-            <span class="wnode__ring"><span class="wnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l9-18 9 18z"/><path d="M8 15l4-8 4 8"/></svg></span></span>
-            <h4>Single-source Himalayan Salt</h4><p>Mined from a single pristine range.</p>
-          </div>
-          <div class="wnode" data-animate="rise" data-delay="1">
-            <span class="wnode__ring"><span class="wnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3l7 7-9 9H5v-7z"/><path d="M11 6l7 7"/></svg></span></span>
-            <h4>Hand-finished Craftsmanship</h4><p>Every piece is carefully shaped by skilled hands.</p>
-          </div>
-          <div class="wnode" data-animate="rise" data-delay="2">
-            <span class="wnode__ring"><span class="wnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span></span>
-            <h4>Export-quality Packaging</h4><p>Secure, clean and designed for global standards.</p>
-          </div>
-          <div class="wnode" data-animate="rise" data-delay="3">
-            <span class="wnode__ring"><span class="wnode__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span></span>
-            <h4>Global Supply Capability</h4><p>Reliable bulk supply for businesses worldwide.</p>
+        <div class="wflow">
+          <svg class="wflow__path" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+            <path pathLength="1" d="M0 74 C 60 58, 110 56, 150 56 C 250 56, 330 110, 450 110 C 570 110, 640 66, 750 66 C 860 66, 930 114, 1050 114 C 1130 114, 1170 100, 1200 96"
+                  fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <div class="wflow__nodes">
+          <article class="wcard" data-animate="rise">
+            <span class="wcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21l9-18 9 18z"/><path d="M8 15l4-8 4 8"/></svg></span>
+            <h4>Single Source</h4>
+            <p>Mined directly from the Himalayan foothills, one range only.</p>
+          </article>
+          <article class="wcard" data-animate="rise" data-delay="1">
+            <span class="wcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3l7 7-9 9H5v-7z"/><path d="M11 6l7 7"/></svg></span>
+            <h4>Hand-Finished</h4>
+            <p>Shaped and smoothed individually by skilled artisans.</p>
+          </article>
+          <article class="wcard" data-animate="rise" data-delay="2">
+            <span class="wcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span>
+            <h4>Export Ready</h4>
+            <p>Cushioned, palletised and documented for safe global transit.</p>
+          </article>
+          <article class="wcard" data-animate="rise" data-delay="3">
+            <span class="wcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span>
+            <h4>Global Supply</h4>
+            <p>Reliable volume and flexible minimums for trade buyers.</p>
+          </article>
           </div>
         </div>
       </div>
@@ -284,12 +316,21 @@
     <!-- ===================== FINAL CTA ===================== -->
     <section class="section final-cta">
       <span class="orbshape orbshape--e" aria-hidden="true"></span>
-      <div class="container" data-animate="rise">
-        <h2>Let's Build Something Exceptional.</h2>
-        <p>Tell us what you're looking for and we'll send a direct quote — tailored to your size, finish, quantity and destination.</p>
-        <div class="btn-row">
-          <a href="/contact.html" class="btn btn--primary btn--lg magnetic">Request a Quote</a>
-          <a href="https://wa.me/[WHATSAPP]?text=Hi%20Pink%20Ridge%2C%20I%27d%20like%20a%20quote." class="btn btn--whatsapp btn--lg magnetic" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11.9 11.9 0 0012 0 12 12 0 001.7 18L0 24l6.2-1.6A12 12 0 0012 24a12 12 0 008.5-20.5zM12 21.8a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8z"/></svg>Chat on WhatsApp</a>
+      <svg class="cta-curves" viewBox="0 0 1400 400" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-40 300 C 340 180, 780 340, 1440 200" stroke="rgba(180,125,116,0.22)" stroke-width="1" fill="none"/>
+        <path d="M-40 360 C 300 260, 820 400, 1440 270" stroke="rgba(180,125,116,0.14)" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="container">
+        <div class="cta-panel" data-animate="rise">
+          <img class="cta-bowl" src="/assets/products/png/edible-bowl.png" alt="" aria-hidden="true">
+          <span class="cta-glow" aria-hidden="true"></span>
+          <span class="eyebrow center">Start a conversation</span>
+          <h2>Let&rsquo;s Build Something Exceptional.</h2>
+          <p>Tell us what you&rsquo;re looking for and we&rsquo;ll send a direct quote — tailored to your size, finish, quantity and destination.</p>
+          <div class="btn-row">
+            <a href="/contact.html" class="btn btn--primary btn--lg magnetic">Request a Quote</a>
+            <a href="https://wa.me/[WHATSAPP]?text=Hi%20Pink%20Ridge%2C%20I%27d%20like%20a%20quote." class="btn btn--whatsapp btn--lg magnetic" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11.9 11.9 0 0012 0 12 12 0 001.7 18L0 24l6.2-1.6A12 12 0 0012 24a12 12 0 008.5-20.5zM12 21.8a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8z"/></svg>Chat on WhatsApp</a>
+          </div>
         </div>
       </div>
     </section>
@@ -297,15 +338,17 @@
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
-    <div class="container">
+    <svg class="footer-range" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 160 L150 78 L240 118 L360 44 L470 104 L580 60 L700 122 L820 66 L940 110 L1060 52 L1200 116 L1200 160 Z" fill="currentColor"/>
+    </svg>
+    <div class="container footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-brand__logo">
-            <!-- REPLACE: official Pink Ridge round seal logo -->
-            <img src="/assets/logo.svg" alt="Pink Ridge logo" width="68" height="68">
-            <span class="brand__name" style="color:#fff">Pink Ridge</span>
+            <img src="/assets/logo.svg" alt="Pink Ridge logo" width="46" height="46">
+            <span class="brand__name">Pink Ridge</span>
           </div>
-          <p>From the Himalayas to your haven.</p>
+          <p class="footer-statement">Handcrafted Himalayan pink salt, from a single range to the world&rsquo;s most considered interiors.</p>
           <div class="socials">
             <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
             <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
@@ -324,17 +367,23 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Get in touch</h4>
+          <h4>Contact</h4>
           <address>
             <ul>
-              <li><a href="/about.html">About Us</a></li>
               <li><a href="tel:[PHONE]">[PHONE]</a></li>
-              <li><a href="https://wa.me/[WHATSAPP]" target="_blank" rel="noopener">WhatsApp: [WHATSAPP]</a></li>
+              <li><a href="https://wa.me/[WHATSAPP]" target="_blank" rel="noopener">[WHATSAPP]</a></li>
               <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
               <li>[ADDRESS]</li>
-              <li>Hours: [HOURS]</li>
             </ul>
           </address>
+        </div>
+        <div class="footer-col">
+          <h4>Business Hours</h4>
+          <ul>
+            <li>[HOURS]</li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Request a Quote</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">

@@ -261,6 +261,20 @@
     }
   }
 
+  /* ---------------- Timeline path draw (left to right) ---------------- */
+  var flow = document.querySelector('.wflow');
+  if (flow) {
+    if (reduce || !('IntersectionObserver' in window)) { flow.classList.add('drawn'); }
+    else {
+      var fio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('drawn'); fio.unobserve(e.target); }
+        });
+      }, { threshold: 0.25 });
+      fio.observe(flow);
+    }
+  }
+
   /* ---------------- Card tilt ---------------- */
   if (!reduce && window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('[data-tilt]').forEach(function (el) {
