@@ -1882,3 +1882,187 @@ body.home .scene__frag--c { opacity: 0.4; }
   transform: translateX(3px); box-shadow: 0 0 22px rgba(230,184,169,0.6); }
 @media (min-width: 700px)  { .ccard-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1080px) { .ccard-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* ==========================================================================
+   HOME v11 — LAYERED LUXURY COLOUR SYSTEM
+   hero stays dark chocolate; everything below alternates warm light tones
+   Rose Brown #A77469 · Dusty Rose #E6D0C8 · Warm Beige #F4E9DE
+   Soft Cream #FBF7F3 · Ivory #F8F3EE
+   ========================================================================== */
+body.home {
+  --choc:      #1A120F;
+  --rose-brown:#A77469;
+  --dusty:     #E6D0C8;
+  --beige:     #F4E9DE;
+  --cream:     #FBF7F3;
+  --ivory-l:   #F8F3EE;
+  --ink-dark:  #2B211F;
+  --ink-mute:  #7A665E;
+  background: var(--cream);
+}
+
+/* ---- hero keeps the cinematic dark ---- */
+body.home .hero2 { background: var(--choc); }
+body.home .hero2__grad {
+  background:
+    linear-gradient(100deg, rgba(26,18,15,0.97) 0%, rgba(26,18,15,0.93) 26%, rgba(26,18,15,0.66) 48%, rgba(26,18,15,0.34) 70%, rgba(26,18,15,0.6) 100%),
+    radial-gradient(46% 56% at 74% 50%, rgba(198,140,121,0.20) 0%, transparent 68%); }
+body.home .hero2__title { color: #FBF7F3; }
+body.home .hero2__title em { color: #E6B8A9; font-style: italic; }
+body.home .hero2__label { color: #E6B8A9; }
+body.home .hero2__desc { color: rgba(251,247,243,0.72); }
+
+/* ==========================================================================
+   Section rhythm — each block contrasts with the one before
+   ========================================================================== */
+body.home .collections2  { background: var(--cream);      color: var(--ink-dark); }
+body.home .fstrip-section{ background: var(--beige);      color: var(--ink-dark); }
+body.home .story2        { background: var(--ivory-l);    color: var(--ink-dark); }
+body.home .why2          { background: linear-gradient(140deg, #B98376 0%, #A77469 46%, #8E6055 100%); }
+body.home .final-cta     { background: var(--dusty);      color: var(--ink-dark); }
+
+/* type + accents on light sections */
+body.home .collections2 h2, body.home .collections2 h3, body.home .collections2 h4,
+body.home .fstrip-section h2, body.home .fstrip-section h4,
+body.home .story2 h2, body.home .story2 h3,
+body.home .final-cta h2 { color: var(--ink-dark); }
+body.home .collections2 p, body.home .fstrip-section p,
+body.home .story2 p, body.home .final-cta p { color: var(--ink-mute); }
+body.home .collections2 .eyebrow, body.home .fstrip-section .eyebrow,
+body.home .story2 .eyebrow, body.home .story2 .story-label { color: var(--rose-brown); }
+body.home .section-head.center h2 + * { color: inherit; }
+/* the thin rule under centred headings */
+body.home .collections2 .section-head.center h2::after,
+body.home .fstrip-section .section-head.center h2::after { background: rgba(167,116,105,0.5); }
+
+/* separators / dividers on light ground */
+body.home .fstrip-section::before {
+  background: linear-gradient(90deg, transparent, rgba(167,116,105,0.28), transparent); }
+
+/* ==========================================================================
+   Oversized blurred ambient shapes between sections
+   ========================================================================== */
+.orbshape { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(70px); }
+.orbshape--a { width: 46vw; height: 46vw; max-width: 640px; max-height: 640px; top: -14%; left: -12%;
+  background: radial-gradient(circle, rgba(230,208,200,0.9) 0%, rgba(230,208,200,0) 70%); }
+.orbshape--b { width: 38vw; height: 38vw; max-width: 520px; max-height: 520px; bottom: -16%; right: -10%;
+  background: radial-gradient(circle, rgba(167,116,105,0.28) 0%, rgba(167,116,105,0) 70%); }
+.orbshape--c { width: 44vw; height: 44vw; max-width: 600px; max-height: 600px; top: -20%; right: -12%;
+  background: radial-gradient(circle, rgba(251,247,243,0.95) 0%, rgba(251,247,243,0) 70%); }
+.orbshape--d { width: 42vw; height: 42vw; max-width: 580px; max-height: 580px; bottom: -18%; left: -14%;
+  background: radial-gradient(circle, rgba(230,208,200,0.75) 0%, rgba(230,208,200,0) 70%); }
+.orbshape--e { width: 40vw; height: 40vw; max-width: 560px; max-height: 560px; top: -22%; left: 8%;
+  background: radial-gradient(circle, rgba(251,247,243,0.85) 0%, rgba(251,247,243,0) 70%); }
+body.home .collections2, body.home .fstrip-section,
+body.home .story2, body.home .final-cta { position: relative; overflow: hidden; }
+body.home .collections2 .container, body.home .fstrip-section .container,
+body.home .story2 .container, body.home .final-cta .container { position: relative; z-index: 1; }
+
+/* ==========================================================================
+   Navigation — floating frosted cream glass
+   ========================================================================== */
+body.home .topbar { background: var(--choc); color: #E6D0C8; }
+body.home .topbar__text { color: rgba(244,233,222,0.82); }
+body.home .topbar__text span { color: #C68C79; }
+body.home .site-header .navbar,
+body.home.at-top .site-header .navbar {
+  background: rgba(251,247,243,0.78);
+  border: 1px solid rgba(255,255,255,0.85);
+  box-shadow: 0 18px 44px -26px rgba(43,33,31,0.45), inset 0 1px 0 rgba(255,255,255,0.9);
+  -webkit-backdrop-filter: saturate(170%) blur(18px); backdrop-filter: saturate(170%) blur(18px); }
+body.home .site-header.scrolled .navbar { background: rgba(251,247,243,0.93);
+  box-shadow: 0 20px 48px -24px rgba(43,33,31,0.5); }
+body.home .site-header .brand__name,
+body.home.at-top .site-header .brand__name { color: var(--ink-dark); }
+body.home .site-header .nav a, body.home .site-header .dropdown__toggle,
+body.home.at-top .site-header .nav a, body.home.at-top .site-header .dropdown__toggle { color: var(--ink-dark); }
+body.home .site-header .nav a::after,
+body.home.at-top .site-header .nav a::after { background: var(--rose-brown); }
+body.home .site-header .nav a:hover, body.home .site-header .nav a[aria-current="page"] { color: var(--rose-brown); }
+body.home .site-header .nav-cta, body.home.at-top .site-header .nav-cta {
+  background: var(--rose-brown); color: #FBF7F3; }
+body.home .site-header .nav-cta:hover { background: #8E6055;
+  box-shadow: 0 0 0 4px rgba(167,116,105,0.18), 0 12px 26px -12px rgba(142,96,85,0.8); }
+body.home .site-header .hamburger span,
+body.home.at-top .site-header .hamburger span { background: var(--ink-dark); }
+body.home .site-header .dropdown__menu { background: var(--cream); border-color: rgba(167,116,105,0.2); }
+body.home .site-header .dropdown__menu a { color: var(--ink-dark); }
+body.home .site-header .dropdown__menu a:hover { background: var(--beige); }
+body.home .site-header .dropdown__menu a .dot { border-color: rgba(167,116,105,0.3); color: var(--rose-brown); }
+body.home .site-header .dropdown__menu a span small { color: var(--ink-mute); }
+
+/* ==========================================================================
+   Product cards — soft cream, elegant shadow, image above, type below
+   ========================================================================== */
+body.home .ccard {
+  display: block; aspect-ratio: auto; background: #FFFFFF;
+  border: 1px solid rgba(167,116,105,0.14); border-radius: 26px; padding: 0.7rem 0.7rem 0.2rem;
+  box-shadow: 0 22px 48px -30px rgba(43,33,31,0.42);
+  transition: transform .6s var(--ease), box-shadow .6s var(--ease), border-color .6s var(--ease); }
+body.home .ccard::after { display: none; }
+body.home .ccard:hover { transform: translateY(-10px); border-color: rgba(167,116,105,0.34);
+  box-shadow: 0 44px 78px -34px rgba(43,33,31,0.5); }
+body.home .ccard__media { position: relative; inset: auto; display: block; aspect-ratio: 4/5;
+  border-radius: 20px; overflow: hidden; background: var(--beige); }
+body.home .ccard__media img { width: 100%; height: 100%; object-fit: cover; }
+body.home .ccard__body { display: block; position: relative; padding: 1.15rem 0.7rem 1.25rem; }
+body.home .ccard__title { display: block; font-family: "Playfair Display","Cormorant Garamond",Georgia,serif;
+  font-weight: 500; font-size: clamp(1.15rem, 1.5vw, 1.4rem); color: var(--ink-dark); line-height: 1.2; }
+body.home .ccard__desc { display: block; font-style: normal; font-size: 0.8rem; line-height: 1.55;
+  color: var(--ink-mute); margin-top: 0.35rem; padding-right: 3rem;
+  opacity: 1; max-height: none; overflow: visible; }
+body.home .ccard__go { position: absolute; right: 0.55rem; bottom: 1.3rem;
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  color: var(--rose-brown); border: 1px solid rgba(167,116,105,0.4); background: transparent;
+  -webkit-backdrop-filter: none; backdrop-filter: none; }
+body.home .ccard:hover .ccard__go { background: var(--rose-brown); border-color: var(--rose-brown);
+  color: #FBF7F3; box-shadow: 0 10px 22px -10px rgba(167,116,105,0.9); }
+
+/* feature strip on warm beige */
+body.home .fstrip__panel { background: rgba(255,255,255,0.72); border-color: rgba(167,116,105,0.18);
+  box-shadow: 0 26px 56px -36px rgba(43,33,31,0.42), inset 0 1px 0 rgba(255,255,255,0.9); }
+body.home .fstrip__icon { color: var(--rose-brown); border-color: rgba(167,116,105,0.3);
+  background: rgba(167,116,105,0.08); box-shadow: none; }
+body.home .fstrip__item:hover .fstrip__icon { background: rgba(167,116,105,0.16);
+  box-shadow: 0 0 24px rgba(167,116,105,0.28); }
+body.home .fstrip__item h4 { color: var(--ink-dark); }
+body.home .fstrip__item p { color: var(--ink-mute); }
+body.home .fstrip__div { background: linear-gradient(rgba(167,116,105,0), rgba(167,116,105,0.26), rgba(167,116,105,0)); }
+
+/* story on ivory */
+body.home .story2__circle { background: radial-gradient(circle at 46% 40%, rgba(230,208,200,0.95) 0%, rgba(167,116,105,0.32) 62%, rgba(167,116,105,0.12) 100%); }
+body.home .story2__media::after { border-color: rgba(167,116,105,0.26); }
+body.home .story2__media img { box-shadow: 0 34px 64px -30px rgba(43,33,31,0.5); }
+body.home .story2 .btn--primary { background: var(--rose-brown); color: #FBF7F3; }
+body.home .story2 .btn--primary:hover { background: #8E6055; }
+
+/* why band (rose brown) keeps light type */
+body.home .why2 h2, body.home .why2 h4 { color: #FBF7F3; }
+body.home .why2 p, body.home .wnode p { color: rgba(251,247,243,0.8); }
+body.home .why2__head .eyebrow { color: #F4E9DE; }
+body.home .why2__head h2 em { color: #F4E9DE; }
+body.home .why2__glow { background:
+  radial-gradient(60% 50% at 20% 10%, rgba(255,255,255,0.16), transparent 60%),
+  radial-gradient(50% 50% at 90% 90%, rgba(230,208,200,0.2), transparent 60%); }
+
+/* final CTA on dusty rose */
+body.home .final-cta .btn--primary { background: var(--ink-dark); color: var(--cream); }
+body.home .final-cta .btn--primary:hover { background: var(--rose-brown); }
+
+/* streaks recoloured for light ground */
+body.home .streaks { opacity: 0.5; }
+
+/* ==========================================================================
+   Footer — light cream, dark type, premium minimal
+   ========================================================================== */
+body.home .site-footer { background: var(--cream); color: var(--ink-dark);
+  border-top: 1px solid rgba(167,116,105,0.16); }
+body.home .site-footer h4 { color: var(--ink-dark); letter-spacing: 0.2em; }
+body.home .site-footer p, body.home .site-footer a, body.home .site-footer li,
+body.home .site-footer address { color: var(--ink-mute); }
+body.home .site-footer a:hover { color: var(--rose-brown); }
+body.home .site-footer .brand__name { color: var(--ink-dark) !important; }
+body.home .site-footer .socials a { border-color: rgba(167,116,105,0.28); color: var(--rose-brown); }
+body.home .site-footer .socials a:hover { background: var(--rose-brown); color: var(--cream); border-color: var(--rose-brown); }
+body.home .footer-bottom { border-top-color: rgba(167,116,105,0.16); }
+body.home .footer-bottom span, body.home .footer-bottom .notice { color: var(--ink-mute); }
