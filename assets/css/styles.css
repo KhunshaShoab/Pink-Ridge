@@ -1750,3 +1750,102 @@ body.home .fstrip-section::before { content: ""; position: absolute; top: 0; lef
   background: linear-gradient(90deg, transparent, rgba(230,184,169,0.22), transparent); }
 body.home .fstrip-section .section-head { margin-bottom: clamp(2rem, 4vw, 3.2rem); }
 .fstrip { margin-top: 0; }
+
+/* ==========================================================================
+   HOME v9 — HERO DEPTH PASS
+   independent motion per object · cast shadow · underglow · volumetric light
+   · sparkles · glass secondary button · calmer background
+   ========================================================================== */
+
+/* ---- 1. background: push the far plane back ---- */
+body.home .hero2__bg img { filter: brightness(0.5) saturate(0.85) blur(3.5px); transform: scale(1.06); }
+body.home .hero2__blur { backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.hero2__dustlayer { opacity: 0.3; }          /* fewer bright specks */
+body.home .hero2__smoke { opacity: 0.38; }
+
+/* volumetric light behind the object */
+.scene__vlight { position: absolute; left: 6%; top: -6%; width: 88%; height: 112%; z-index: 0; pointer-events: none;
+  background: radial-gradient(50% 42% at 50% 46%, rgba(255,186,132,0.34) 0%, rgba(255,150,95,0.14) 38%, transparent 72%);
+  filter: blur(28px); animation: vlightBreathe 9s ease-in-out infinite; }
+@keyframes vlightBreathe { 0%,100% { opacity: 0.8; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+
+/* ---- 2. each object moves on its own clock ---- */
+/* platform: slow independent bob, stronger cast shadow */
+body.home .scene__platform {
+  filter: drop-shadow(0 42px 30px rgba(0,0,0,0.92)) drop-shadow(0 14px 18px rgba(0,0,0,0.7));
+  animation: rockBob 14s ease-in-out infinite; }
+@keyframes rockBob { 0%,100% { transform: translateY(0) rotate(-0.4deg); } 50% { transform: translateY(-9px) rotate(0.4deg); } }
+
+/* ground shadow cast by the floating rock */
+.scene__shadow { position: absolute; left: 24%; top: 84%; width: 54%; height: 9%; z-index: 3; border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.36) 46%, transparent 72%);
+  filter: blur(12px); animation: shadowPulse 14s ease-in-out infinite; }
+@keyframes shadowPulse { 0%,100% { transform: scaleX(1) scaleY(1); opacity: 0.85; } 50% { transform: scaleX(0.92) scaleY(0.86); opacity: 0.6; } }
+
+/* glow spilling from the crystal onto the rock top */
+.scene__underglow { position: absolute; left: 30%; top: 55%; width: 42%; height: 16%; z-index: 5; border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255,178,112,0.75) 0%, rgba(255,140,80,0.34) 42%, transparent 74%);
+  filter: blur(15px); mix-blend-mode: screen; animation: underPulse 6.5s ease-in-out infinite; }
+@keyframes underPulse { 0%,100% { opacity: 0.7; transform: scaleX(1); } 50% { opacity: 1; transform: scaleX(1.08); } }
+
+/* crystal: hovers ~8px clear of the rock, bobs and turns on its own timing */
+.scene__lift { position: absolute; left: 31%; top: 13%; width: 40%; z-index: 6;
+  animation: crystalHover 9s ease-in-out infinite; will-change: transform; }
+@keyframes crystalHover { 0%,100% { transform: translateY(-8px); } 50% { transform: translateY(-16px); } }
+body.home .scene__crystal { position: relative; left: auto; top: auto; width: 100%; z-index: auto;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 16px 22px rgba(0,0,0,0.6)) drop-shadow(0 0 56px rgba(255,150,95,0.55));
+  animation: crystalTurn 11s ease-in-out infinite; will-change: transform; }
+/* gentle turn — a flat PNG cannot survive a true 360 spin, so this oscillates */
+@keyframes crystalTurn {
+  0%,100% { transform: perspective(900px) rotateY(-7deg) rotate(-1deg); }
+  50%     { transform: perspective(900px) rotateY(7deg)  rotate(1deg); }
+}
+
+/* ---- sparkles on the crystal edges ---- */
+.sparkle { position: absolute; width: 8px; height: 8px; border-radius: 50%; pointer-events: none; z-index: 7;
+  background: radial-gradient(circle, rgba(255,246,236,1) 0%, rgba(255,206,160,0.7) 32%, transparent 68%);
+  opacity: 0; }
+.sparkle::after { content: ""; position: absolute; inset: -5px;
+  background: conic-gradient(from 0deg, transparent 0turn, rgba(255,240,220,0.85) 0.02turn, transparent 0.05turn,
+              transparent 0.22turn, rgba(255,240,220,0.85) 0.27turn, transparent 0.3turn,
+              transparent 0.47turn, rgba(255,240,220,0.85) 0.52turn, transparent 0.55turn,
+              transparent 0.72turn, rgba(255,240,220,0.85) 0.77turn, transparent 0.8turn);
+  filter: blur(0.4px); }
+.sparkle--1 { left: 24%; top: 22%; animation: twinkle 7s ease-in-out infinite 0.6s; }
+.sparkle--2 { left: 72%; top: 38%; animation: twinkle 9s ease-in-out infinite 3.1s; }
+.sparkle--3 { left: 40%; top: 12%; animation: twinkle 8s ease-in-out infinite 5.4s; }
+.sparkle--4 { left: 62%; top: 68%; animation: twinkle 11s ease-in-out infinite 7.8s; }
+@keyframes twinkle {
+  0%, 88%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  92%           { opacity: 1; transform: scale(1.25) rotate(35deg); }
+  96%           { opacity: 0.5; transform: scale(0.8) rotate(60deg); }
+}
+
+/* fragments drift on distinct clocks */
+body.home .scene__frag--a { animation: orbitA 19s ease-in-out infinite; }
+body.home .scene__frag--b { animation: orbitB 24s ease-in-out infinite; }
+body.home .scene__frag--c { animation: orbitC 29s ease-in-out infinite; }
+
+/* ---- 4. secondary button: glass, brighter + glowing on hover ---- */
+body.home .btn--ghost-light {
+  background: rgba(255,255,255,0.07); border-color: rgba(230,184,169,0.4); color: var(--ink);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10); }
+body.home .btn--ghost-light:hover {
+  background: rgba(255,255,255,0.16); border-color: rgba(230,184,169,0.85); color: #fff;
+  box-shadow: 0 0 26px rgba(230,184,169,0.45), inset 0 1px 0 rgba(255,255,255,0.2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .scene__lift, .scene__crystal, .scene__platform, .scene__shadow,
+  .scene__underglow, .scene__vlight, .sparkle { animation: none !important; }
+  .sparkle { opacity: 0; }
+}
+/* tighten the spill so it lights the rock without hazing it */
+.scene__underglow { left: 34%; top: 57%; width: 34%; height: 11%; filter: blur(11px); }
+@keyframes underPulse { 0%,100% { opacity: 0.5; transform: scaleX(1); } 50% { opacity: 0.72; transform: scaleX(1.07); } }
+/* keep the dust clouds from milking over the rock */
+body.home .scene__frag--b { opacity: 0.5; }
+body.home .scene__frag--c { opacity: 0.4; }
+/* make sure the cast shadow reads under the floating rock */
+.scene__shadow { top: 86%; width: 50%; left: 26%; }

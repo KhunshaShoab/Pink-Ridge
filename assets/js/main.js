@@ -213,7 +213,7 @@
     function dsize() {
       var r = dust.parentElement.getBoundingClientRect();
       dust.width = r.width * DPR; dust.height = r.height * DPR;
-      var n = Math.round((r.width * r.height) / 26000);
+      var n = Math.round((r.width * r.height) / 37000); /* ~30% fewer particles */
       dp = []; for (var i = 0; i < n; i++) dp.push({
         x: Math.random() * dust.width, y: Math.random() * dust.height,
         r: (Math.random() * 1.6 + 0.4) * DPR, s: Math.random() * 0.28 + 0.05,
