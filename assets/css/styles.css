@@ -1739,3 +1739,14 @@ body.home .scene__frag--c { left: 8%;  top: 52%; width: 48%; opacity: 0.6; }
 /* brighter, more defined halo ring (matches reference) */
 .scene__halo { border-color: rgba(255,214,178,0.55);
   box-shadow: 0 0 46px rgba(255,186,130,0.55), inset 0 0 60px rgba(255,186,130,0.2); }
+
+/* ==========================================================================
+   Feature strip is its own section, visually distinct from Collections
+   ========================================================================== */
+body.home .fstrip-section { background: var(--bg-1); position: relative; }
+/* hairline divider between the two sections */
+body.home .fstrip-section::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: min(88%, 1180px); height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230,184,169,0.22), transparent); }
+body.home .fstrip-section .section-head { margin-bottom: clamp(2rem, 4vw, 3.2rem); }
+.fstrip { margin-top: 0; }
