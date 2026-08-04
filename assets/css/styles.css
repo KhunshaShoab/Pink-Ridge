@@ -1520,3 +1520,85 @@ body.home .wnode p { color: rgba(248,239,234,0.66); }
 .hero2__right .scene { position: relative; top: auto; right: auto; transform: none; width: min(38vw, 500px); }
 @media (max-width: 1100px) { .hero2__right .scene { width: 40vw; opacity: 1; right: auto; } }
 .hero2__play-txt { letter-spacing: 0.24em; }
+
+/* ==========================================================================
+   HOME v7 — REAL PHOTOGRAPHIC HERO SCENE (supplied PNG assets, layered)
+   ========================================================================== */
+/* photographic background */
+body.home .hero2__bg { position: absolute; inset: 0; z-index: 0; will-change: transform; }
+body.home .hero2__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%;
+  animation: heroZoomSlow 30s ease-in-out infinite alternate; }
+@keyframes heroZoomSlow { from { transform: scale(1.06); } to { transform: scale(1.16); } }
+body.home .hero2__grad { z-index: 1;
+  background: linear-gradient(100deg, rgba(20,12,10,0.96) 0%, rgba(24,15,12,0.86) 30%, rgba(28,18,15,0.42) 56%, rgba(28,18,15,0.16) 76%, rgba(20,12,10,0.5) 100%); }
+body.home .hero2__vignette { z-index: 2; }
+.hero2__dustlayer { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%;
+  object-fit: cover; pointer-events: none; opacity: 0.7; mix-blend-mode: screen;
+  animation: dustDrift 42s ease-in-out infinite alternate; will-change: transform; }
+@keyframes dustDrift { from { transform: translate3d(-1.5%, 1%, 0) scale(1.05); } to { transform: translate3d(2%, -1.5%, 0) scale(1.12); } }
+.hero2__dust { z-index: 4; }
+
+/* ---- layered scene: orb behind, platform, crystal, orbiting fragments ---- */
+.scene { position: relative; width: min(40vw, 540px); aspect-ratio: 1; }
+.scene > * { position: absolute; }
+.scene img { height: auto; max-width: none; }
+
+.scene__orb { left: 4%; top: 6%; width: 92%; z-index: 1; opacity: 0.9;
+  filter: drop-shadow(0 0 60px rgba(230,184,169,0.22));
+  animation: orbBreathe 13s ease-in-out infinite; will-change: transform; }
+@keyframes orbBreathe { 0%,100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.035) rotate(1.5deg); } }
+
+.scene__glow { left: 20%; top: 22%; width: 60%; height: 60%; z-index: 2; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,170,120,0.55) 0%, rgba(230,140,100,0.28) 38%, transparent 68%);
+  filter: blur(34px); animation: glowPulse 7s ease-in-out infinite; }
+@keyframes glowPulse { 0%,100% { opacity: 0.75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.09); } }
+
+.scene__platform { left: 12%; top: 52%; width: 76%; z-index: 3;
+  filter: drop-shadow(0 26px 34px rgba(0,0,0,0.75));
+  animation: floatSlow 15s ease-in-out infinite; will-change: transform; }
+.scene__crystal { left: 27%; top: 12%; width: 46%; z-index: 4;
+  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.6)) drop-shadow(0 0 46px rgba(255,150,100,0.4));
+  animation: floatCrystal 11s ease-in-out infinite; will-change: transform; }
+@keyframes floatSlow    { 0%,100% { transform: translateY(0); }      50% { transform: translateY(-12px); } }
+@keyframes floatCrystal { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-26px) rotate(1.2deg); } }
+
+.scene__frag { z-index: 5; mix-blend-mode: screen; pointer-events: none; will-change: transform; }
+.scene__frag--a { left: -6%;  top: 10%; width: 62%; opacity: 0.95; animation: orbitA 17s ease-in-out infinite; }
+.scene__frag--b { left: 36%;  top: 44%; width: 74%; opacity: 0.8;  animation: orbitB 21s ease-in-out infinite; }
+.scene__frag--c { left: 10%;  top: 54%; width: 52%; opacity: 0.65; animation: orbitC 26s ease-in-out infinite; transform: scaleX(-1); }
+@keyframes orbitA { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(14px,-24px) rotate(7deg); } }
+@keyframes orbitB { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-18px,-16px) rotate(-6deg); } }
+@keyframes orbitC { 0%,100% { transform: scaleX(-1) translate(0,0); } 50% { transform: scaleX(-1) translate(12px,-20px); } }
+
+@media (max-width: 1100px) { .scene { width: 44vw; } }
+@media (max-width: 900px)  { .hero2__right { display: none; } }
+
+/* entrance reveal for the whole composition */
+.scene { opacity: 0; transform: translateY(28px) scale(0.97); transition: opacity 1.3s var(--ease), transform 1.3s var(--ease); }
+.scene.in-view { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .scene { opacity: 1 !important; transform: none !important; } }
+
+/* ---- collection tiles: cutout PNGs sit on a lit plinth, photos fill ---- */
+body.home .tile--cutout .tile__media {
+  background: radial-gradient(circle at 50% 76%, rgba(230,184,169,0.20) 0%, rgba(198,140,121,0.07) 42%, rgba(28,18,15,0) 70%), linear-gradient(180deg, #241713 0%, #1C120F 100%); }
+body.home .tile--cutout .tile__media img { object-fit: contain; padding: 14% 16% 20%; filter: drop-shadow(0 20px 26px rgba(0,0,0,0.6)); }
+body.home .tile--cutout:hover .tile__media img { transform: scale(1.07) translateY(-4px); }
+
+/* story image in the dark theme */
+body.home .story2__media img { border-radius: 22px; box-shadow: 0 34px 64px -28px rgba(0,0,0,0.85); }
+/* keep the composition inside its box + calm the busy backdrop behind the copy */
+body.home .scene__orb      { width: 92%; }
+body.home .scene__platform { width: 76%; }
+body.home .scene__crystal  { width: 46%; }
+body.home .scene__frag--a  { width: 62%; }
+body.home .scene__frag--b  { width: 74%; }
+body.home .scene__frag--c  { width: 52%; }
+body.home .hero2__bg img { filter: brightness(0.62) saturate(0.92); }
+body.home .hero2__grad {
+  background:
+    linear-gradient(100deg, rgba(16,10,8,0.97) 0%, rgba(18,11,9,0.93) 26%, rgba(24,15,12,0.66) 48%, rgba(24,15,12,0.34) 70%, rgba(16,10,8,0.6) 100%),
+    radial-gradient(46% 56% at 74% 50%, rgba(198,140,121,0.20) 0%, transparent 68%); }
+.hero2__dustlayer { opacity: 0.5; }
+/* make the glass sphere read behind the crystal */
+body.home .scene__orb { opacity: 1; filter: drop-shadow(0 0 70px rgba(230,184,169,0.3)) brightness(1.5) contrast(1.08); }
+body.home .tile--cutout .tile__media img { padding: 7% 9% 13%; }

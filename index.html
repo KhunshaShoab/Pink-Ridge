@@ -91,91 +91,32 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero2" id="top">
+      <div class="hero2__bg" data-hero-bg aria-hidden="true"><img src="/assets/scene/hero-bg.jpg" alt=""></div>
       <div class="hero2__grad" aria-hidden="true"></div>
-      <div class="hero2__mesh" aria-hidden="true"></div>
       <div class="hero2__vignette" aria-hidden="true"></div>
-      <div class="hero2__noise" aria-hidden="true"></div>
+      <img class="hero2__dustlayer" src="/assets/scene/dust.png" alt="" aria-hidden="true" data-depth="10">
       <canvas class="hero2__dust" data-dust aria-hidden="true"></canvas>
-
-      <div class="hero2__stage" aria-hidden="true">
-        <span class="blob blob--1" data-depth="22"></span>
-        <span class="blob blob--2" data-depth="34"></span>
-        <span class="blob blob--3" data-depth="16"></span>
-      </div>
 
       <div class="container hero2__inner">
         <div class="hero2__content">
           <span class="hero2__label" data-animate="rise">Nature's Purity. Crafted to Perfection.</span>
           <h1 class="hero2__title" data-animate="rise" data-delay="1">The World's<br>Finest Himalayan<br><em>Pink Salt</em>.</h1>
-          <p class="hero2__desc" data-animate="rise" data-delay="2">Mined from ancient Himalayan ranges and handcrafted with care, our pink salt brings purity, beauty and warmth to homes and industries around the globe.</p>
+          <p class="hero2__desc" data-animate="rise" data-delay="2">Mined from ancient Himalayan ranges and handcrafted with care, our pink salt brings purity, beauty and wellness to homes and industries around the globe.</p>
           <div class="btn-row" data-animate="rise" data-delay="3">
             <a href="/products.html" class="btn btn--light magnetic">Explore Collection</a>
             <a href="/contact.html" class="btn btn--ghost-light magnetic">Request a Quote</a>
           </div>
         </div>
+
         <div class="hero2__right">
           <div class="scene" data-hero-scene aria-hidden="true">
-            <span class="scene__sphere" data-depth="16"></span>
-            <span class="scene__glow" data-depth="10"></span>
-          <svg class="scene__slab" data-depth="30" viewBox="0 0 340 110" aria-hidden="true">
-            <defs>
-              <linearGradient id="slabG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#5A4239"/><stop offset="0.45" stop-color="#3A2822"/><stop offset="1" stop-color="#1C1210"/>
-              </linearGradient>
-              <linearGradient id="slabTop" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#7A5A4C"/><stop offset="0.5" stop-color="#8E6857"/><stop offset="1" stop-color="#594036"/>
-              </linearGradient>
-            </defs>
-            <path d="M14 40 L70 18 L210 10 L300 24 L332 44 L300 64 L236 86 L168 100 L104 90 L48 66 Z" fill="url(#slabG)"/>
-            <path d="M14 40 L70 18 L210 10 L300 24 L332 44 L250 58 L120 60 L48 52 Z" fill="url(#slabTop)" opacity="0.95"/>
-            <path d="M48 52 L120 60 L250 58 L332 44 L300 64 L236 86 L168 100 L104 90 L48 66 Z" fill="#1A100E" opacity="0.55"/>
-          </svg>
-
-          <svg class="scene__crystal" data-depth="52" viewBox="0 0 300 260" aria-hidden="true">
-            <defs>
-              <linearGradient id="cryG" x1="0.1" y1="0" x2="0.9" y2="1">
-                <stop offset="0" stop-color="#FBDDD3"/><stop offset="0.4" stop-color="#F0B4A2"/>
-                <stop offset="0.75" stop-color="#D98F78"/><stop offset="1" stop-color="#B96F58"/>
-              </linearGradient>
-              <linearGradient id="cryLite" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#FFF2EC" stop-opacity="0.95"/><stop offset="1" stop-color="#F6C9BA" stop-opacity="0.15"/>
-              </linearGradient>
-              <radialGradient id="cryCore" cx="0.42" cy="0.5" r="0.55">
-                <stop offset="0" stop-color="#FFD9C6" stop-opacity="0.85"/><stop offset="1" stop-color="#E9A188" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <path d="M54 168 L22 112 L46 62 L96 26 L152 8 L214 30 L258 78 L272 134 L250 190 L196 232 L132 246 L82 214 Z" fill="url(#cryG)"/>
-            <!-- crystalline facets -->
-            <path d="M46 62 L96 26 L152 8 L128 88 L74 104 Z" fill="#FFF4EE" opacity="0.72"/>
-            <path d="M152 8 L214 30 L258 78 L190 104 L128 88 Z" fill="#FAD5C7" opacity="0.62"/>
-            <path d="M258 78 L272 134 L250 190 L160 170 L190 104 Z" fill="#B5674E" opacity="0.5"/>
-            <path d="M250 190 L196 232 L132 246 L160 170 Z" fill="#8F4C37" opacity="0.5"/>
-            <path d="M132 246 L82 214 L54 168 L96 140 L160 170 Z" fill="#C2755B" opacity="0.42"/>
-            <path d="M54 168 L22 112 L46 62 L74 104 L96 140 Z" fill="#D98E74" opacity="0.34"/>
-            <path d="M128 88 L190 104 L160 170 L96 140 L74 104 Z" fill="#FFE3D6" opacity="0.5"/>
-            <ellipse cx="132" cy="128" rx="72" ry="66" fill="url(#cryCore)"/>
-            <!-- crisp highlight edges -->
-            <path d="M96 26 L152 8 L146 26 L104 44 Z" fill="#FFFFFF" opacity="0.5"/>
-            <path d="M128 88 L190 104 L160 170 L96 140 L74 104 Z" fill="none" stroke="#FFF6F1" stroke-width="1" opacity="0.3"/>
-            <path d="M46 62 L128 88 L190 104 L258 78" fill="none" stroke="#FFE9DE" stroke-width="1.1" opacity="0.4"/>
-          </svg>
-
-          <svg class="scene__chip scene__chip--a" data-depth="86" viewBox="0 0 90 80" aria-hidden="true">
-            <path d="M12 52 L4 28 L26 8 L62 4 L84 26 L76 58 L44 76 L20 68 Z" fill="url(#cryG)"/>
-            <path d="M26 8 L62 4 L58 30 L22 34 Z" fill="#FFFFFF" opacity="0.3"/>
-          </svg>
-          <svg class="scene__chip scene__chip--b" data-depth="104" viewBox="0 0 90 80" aria-hidden="true">
-            <path d="M10 46 L6 22 L30 6 L64 8 L84 32 L72 62 L40 74 L18 62 Z" fill="url(#cryG)"/>
-            <path d="M30 6 L64 8 L60 32 L26 32 Z" fill="#FFFFFF" opacity="0.26"/>
-          </svg>
-          <svg class="scene__chip scene__chip--c" data-depth="72" viewBox="0 0 90 80" aria-hidden="true">
-            <path d="M14 50 L8 26 L28 8 L60 6 L82 30 L74 60 L42 74 L20 64 Z" fill="url(#cryG)"/>
-            <path d="M28 8 L60 6 L56 28 L24 30 Z" fill="#FFFFFF" opacity="0.28"/>
-          </svg>
-          <svg class="scene__chip scene__chip--d" data-depth="120" viewBox="0 0 90 80" aria-hidden="true">
-            <path d="M12 48 L6 24 L28 6 L62 6 L82 30 L72 60 L40 74 L18 62 Z" fill="url(#cryG)"/>
-          </svg>
-
+            <img class="scene__orb"      src="/assets/scene/orb.png"       alt="" data-depth="14">
+            <span class="scene__glow"></span>
+            <img class="scene__platform" src="/assets/scene/platform.png"  alt="" data-depth="34">
+            <img class="scene__crystal"  src="/assets/scene/crystal.png"   alt="" data-depth="54">
+            <img class="scene__frag scene__frag--a" src="/assets/scene/fragments.png" alt="" data-depth="78">
+            <img class="scene__frag scene__frag--b" src="/assets/scene/fragments.png" alt="" data-depth="96">
+            <img class="scene__frag scene__frag--c" src="/assets/scene/fragments.png" alt="" data-depth="64">
           </div>
           <a href="/about.html" class="hero2__play magnetic" data-animate="fade" data-delay="3" aria-label="Watch our story">
             <span class="hero2__play-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -214,7 +155,7 @@
       <div class="container split">
         <div class="story2__media" data-animate="left">
           <span class="story2__circle" aria-hidden="true"></span>
-          <img src="/assets/lifestyle/hero-living-room.jpg" alt="A glowing Himalayan salt lamp among raw pink salt in a warm, considered setting">
+          <img src="/assets/scene/story.jpg" alt="Himalayan salt lamp, carved bowls and raw pink salt arranged on dark wood">
         </div>
         <div class="story2__body" data-animate="right">
           <span class="eyebrow story-label">Our Story</span>
@@ -231,23 +172,23 @@
       <div class="container">
         <div class="section-head center" data-animate><span class="eyebrow center">Our Collections</span><h2>Crafted for Every Purpose</h2></div>
         <div class="tile-grid">
-          <a class="tile" href="/lamps.html" data-animate="rise" aria-label="Salt Lamps">
-            <div class="tile__media"><img src="/assets/lifestyle/col-lamps.jpg" alt="Salt Lamps — Pink Ridge" loading="lazy"></div>
+          <a class="tile tile--cutout" href="/lamps.html" data-animate="rise" aria-label="Salt Lamps">
+            <div class="tile__media"><img src="/assets/products/png/salt-lamp.png" alt="Salt Lamps — Pink Ridge" loading="lazy"></div>
             <span class="tile__label">Salt Lamps</span>
             <span class="tile__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
           <a class="tile" href="/decor.html" data-animate="rise" data-delay="1" aria-label="Home Decor">
-            <div class="tile__media"><img src="/assets/lifestyle/decor-console.jpg" alt="Home Decor — Pink Ridge" loading="lazy"></div>
+            <div class="tile__media"><img src="/assets/products/png/home-decor.jpg" alt="Home Decor — Pink Ridge" loading="lazy"></div>
             <span class="tile__label">Home Decor</span>
             <span class="tile__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="tile" href="/edible.html" data-animate="rise" data-delay="2" aria-label="Edible Salt">
-            <div class="tile__media"><img src="/assets/lifestyle/edible-bowl.jpg" alt="Edible Salt — Pink Ridge" loading="lazy"></div>
+          <a class="tile tile--cutout" href="/edible.html" data-animate="rise" data-delay="2" aria-label="Edible Salt">
+            <div class="tile__media"><img src="/assets/products/png/edible-bowl.png" alt="Edible Salt — Pink Ridge" loading="lazy"></div>
             <span class="tile__label">Edible Salt</span>
             <span class="tile__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
           <a class="tile" href="/bricks.html" data-animate="rise" data-delay="3" aria-label="Salt Bricks">
-            <div class="tile__media"><img src="/assets/lifestyle/bricks-spa.jpg" alt="Salt Bricks — Pink Ridge" loading="lazy"></div>
+            <div class="tile__media"><img src="/assets/products/png/salt-bricks.jpg" alt="Salt Bricks — Pink Ridge" loading="lazy"></div>
             <span class="tile__label">Salt Bricks</span>
             <span class="tile__go"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>

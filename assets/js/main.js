@@ -189,6 +189,23 @@
     pxUpdate();
   }
 
+  /* ---------------- HERO: composition entrance reveal ---------------- */
+  var heroScene = document.querySelector('[data-hero-scene]');
+  if (heroScene) {
+    var imgs = Array.prototype.slice.call(heroScene.querySelectorAll('img'));
+    var pending = imgs.filter(function (i) { return !i.complete; }).length;
+    function revealScene() { requestAnimationFrame(function () { heroScene.classList.add('in-view'); }); }
+    if (!pending) { revealScene(); }
+    else {
+      imgs.forEach(function (i) {
+        if (i.complete) return;
+        i.addEventListener('load', function () { if (--pending <= 0) revealScene(); });
+        i.addEventListener('error', function () { if (--pending <= 0) revealScene(); });
+      });
+      setTimeout(revealScene, 2500); /* never leave it hidden */
+    }
+  }
+
   /* ---------------- HERO: dust particles ---------------- */
   var dust = document.querySelector('[data-dust]');
   if (dust && !reduce) {
