@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Pink Ridge — Handcrafted Himalayan Pink Salt</title>
-  <meta name="description" content="Pink Ridge hand-finishes Himalayan pink salt lamps, décor and edible salt from a single origin. Our story, craftsmanship and export-ready approach.">
+  <title>About Pink Ridge — Ancient Stone. Modern Luxury.</title>
+  <meta name="description" content="The Pink Ridge story: Himalayan pink salt formed over millions of years, hand-finished by skilled artisans and prepared for homes, businesses and international markets.">
   <link rel="canonical" href="https://www.pinkridge.example/about.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="About Pink Ridge — Handcrafted Himalayan Pink Salt">
-  <meta property="og:description" content="Pink Ridge hand-finishes Himalayan pink salt lamps, décor and edible salt from a single origin. Our story, craftsmanship and export-ready approach.">
+  <meta property="og:title" content="About Pink Ridge — Ancient Stone. Modern Luxury.">
+  <meta property="og:description" content="The Pink Ridge story: Himalayan pink salt formed over millions of years, hand-finished by skilled artisans and prepared for homes, businesses and international markets.">
   <meta property="og:image" content="/assets/logo.svg">
   <meta property="og:url" content="https://www.pinkridge.example/about.html">
   <meta name="twitter:card" content="summary_large_image">
@@ -18,8 +18,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "AboutPage",
+    "name": "About Pink Ridge",
+    "description": "The Pink Ridge story — ancient Himalayan salt, hand-finished with care and prepared for international markets.",
+    "url": "https://www.pinkridge.example/about.html"
+  }
+  </script>
 </head>
-<body>
+<body class="about">
   <!-- ===================== TOP BAR ===================== -->
   <div class="topbar"><div class="container"><p class="topbar__text">Handcrafted Himalayan Pink Salt <span>•</span> Export Worldwide <span>•</span> Quotes within 24 Hours</p></div></div>
 
@@ -78,69 +86,231 @@
   </div>
 
   <main>
-    <!-- ABOUT HERO (editorial split) -->
-    <section class="hero bg-ivory">
-      <div class="container hero__grid">
-        <div class="hero__content" data-animate>
-          <p class="hero__eyebrow">Our Story</p>
-          <h1 class="hero__title" style="font-size:clamp(2.6rem,5vw,4.2rem)">From the Himalayan mountains to homes around the world.</h1>
-          <p class="hero__sub">Pink Ridge was built on a simple belief — that something as ancient as Himalayan salt deserves to be handled with care.</p>
-          <a href="/products.html" class="btn btn--primary">Explore the Collection <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <!-- ============ 1. CINEMATIC HERO (asymmetric, editorial) ============ -->
+    <section class="ab-hero">
+      <div class="ab-hero__wash" aria-hidden="true"></div>
+      <svg class="ab-hero__range" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true" style="opacity:1">
+        <path d="M0 420 L120 250 L206 306 L318 176 L404 262 L520 140 L628 244 L742 150 L866 268 L972 190 L1092 286 L1200 214 L1320 300 L1440 236 L1440 420 Z" fill="currentColor" opacity="0.30"/>
+        <path d="M0 420 L96 316 L200 360 L300 262 L400 336 L512 240 L620 320 L730 250 L850 340 L960 286 L1080 356 L1190 300 L1310 368 L1440 318 L1440 420 Z" fill="currentColor" opacity="0.55"/>
+        <path d="M0 420 L140 372 L260 398 L380 350 L500 392 L640 344 L780 390 L900 356 L1040 398 L1180 362 L1320 400 L1440 372 L1440 420 Z" fill="currentColor" opacity="0.85"/>
+      </svg>
+      <span class="ab-hero__disc" aria-hidden="true"></span>
+      <img class="ab-hero__stone" src="/assets/scene/crystal.png" alt="" aria-hidden="true" data-depth="26">
+      <img class="ab-hero__chips" src="/assets/scene/fragments.png" alt="" aria-hidden="true" data-depth="44">
+
+      <div class="container ab-hero__inner">
+        <p class="ab-hero__eyebrow" data-animate="rise">The Pink Ridge Story</p>
+        <h1 class="ab-hero__title" data-animate="rise" data-delay="1">Born in the<br><em>Himalayas.</em></h1>
+        <p class="ab-hero__sub" data-animate="rise" data-delay="2">Ancient salt. Hand-finished with care. Crafted for the modern world.</p>
+        <a class="ab-scroll" href="#origin" data-animate="fade" data-delay="3">
+          <span class="ab-scroll__line" aria-hidden="true"></span>Discover Our Story
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ 2. THE ORIGIN ============ -->
+    <section class="ab-origin" id="origin">
+      <div class="container">
+        <div class="ab-origin__head">
+          <span class="ab-label" data-animate="rise">The Origin</span>
+          <h2 data-animate="rise" data-delay="1">From the Heart of<br>the Himalayas.</h2>
         </div>
-        <figure class="hero__media" data-animate data-delay="1">
-          <!-- REPLACE: editorial lifestyle / landscape — the Himalayan salt range or workshop -->
-          <img src="/assets/products/bricks/brick-raw-01.jpg" alt="Raw Himalayan pink salt at the source">
-          <figcaption>The Himalayan salt range</figcaption>
+      </div>
+      <figure class="ab-pano" data-animate="fade">
+      <svg class="ab-pano__range" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true" style="opacity:1">
+        <path d="M0 420 L120 250 L206 306 L318 176 L404 262 L520 140 L628 244 L742 150 L866 268 L972 190 L1092 286 L1200 214 L1320 300 L1440 236 L1440 420 Z" fill="currentColor" opacity="0.30"/>
+        <path d="M0 420 L96 316 L200 360 L300 262 L400 336 L512 240 L620 320 L730 250 L850 340 L960 286 L1080 356 L1190 300 L1310 368 L1440 318 L1440 420 Z" fill="currentColor" opacity="0.55"/>
+        <path d="M0 420 L140 372 L260 398 L380 350 L500 392 L640 344 L780 390 L900 356 L1040 398 L1180 362 L1320 400 L1440 372 L1440 420 Z" fill="currentColor" opacity="0.85"/>
+      </svg>
+        <span class="ab-pano__sun" aria-hidden="true"></span>
+        <img class="ab-pano__stone" src="/assets/scene/crystal.png" alt="Raw Himalayan pink salt at the mountain edge" loading="lazy">
+        <figcaption>Khewra, Punjab — the western edge of the Himalayan range</figcaption>
+      </figure>
+      <div class="container ab-origin__grid">
+        <div class="ab-origin__col" data-animate="rise">
+          <p class="ab-lede">Two hundred and fifty million years ago an ancient sea withdrew from what is now northern Pakistan, leaving behind a seam of crystalline salt that the rising Himalayas would seal beneath stone.</p>
+        </div>
+        <div class="ab-origin__col" data-animate="rise" data-delay="1">
+          <p>That seam is where our work begins. The salt is cut in blocks from deep galleries, brought to the surface unwashed and unbleached, and sorted by hand before it ever reaches a workshop.</p>
+          <p>Nothing is added. Nothing is dyed. What arrives at your door is what the mountain made.</p>
+        </div>
+        <figure class="ab-origin__detail" data-animate="rise" data-delay="2">
+          <img src="/assets/scene/story.jpg" alt="Raw pink salt and finished pieces on dark wood" loading="lazy">
         </figure>
       </div>
     </section>
 
-    <!-- STORY -->
-    <section class="section bg-white">
-      <div class="container container--narrow" data-animate>
-        <div class="prose mx-auto">
-          <p class="lede">We are not a mass warehouse. We are a team that takes pride in consistency — the right colour, the right finish, and packing that arrives intact whether it's going to a home down the road or a distributor across the ocean.</p>
-          <p>Every lamp, block and grain begins in the Himalayan salt range, mined and then hand-finished by skilled craftspeople who shape each piece individually. Because no two pieces of natural salt are identical, every product carries its own character. We think that's the point.</p>
+    <!-- ============ 3. THE MATERIAL (editorial spread) ============ -->
+    <section class="ab-material">
+      <span class="ab-word ab-word--1" aria-hidden="true">TIME.</span>
+      <span class="ab-word ab-word--2" aria-hidden="true">MINERAL.</span>
+      <span class="ab-word ab-word--3" aria-hidden="true">EARTH.</span>
+      <div class="container ab-material__grid">
+        <figure class="ab-material__macro" data-animate="left">
+          <img src="/assets/products/png/card-edible-bowl.jpg" alt="Macro detail of Himalayan pink salt crystals" loading="lazy">
+        </figure>
+        <div class="ab-material__body" data-animate="right">
+          <span class="ab-label">The Material</span>
+          <h2>A Mineral Shaped<br>by Time.</h2>
+          <p class="ab-lede">Formed over millions of years under immense pressure, Himalayan salt carries a mineral signature no laboratory reproduces.</p>
+          <dl class="ab-facts">
+            <div><dt>Formation</dt><dd>Laid down across geological eras, compressed beneath the rising range.</dd></div>
+            <div><dt>Composition</dt><dd>Mineral-rich, with trace elements that give the stone its character.</dd></div>
+            <div><dt>Colour</dt><dd>Pale blush through deep amber — the tone is natural, never dyed.</dd></div>
+            <div><dt>Processing</dt><dd>Minimal by design. Cut, shaped, finished. Nothing more.</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <!-- TIMELINE -->
-    <section class="section bg-beige">
+    <!-- ============ 4. RAW STONE TO FINISHED PRODUCT ============ -->
+    <section class="ab-journey">
       <div class="container">
-        <div class="section-head" data-animate><span class="eyebrow">Craftsmanship</span><h2>From mountain to haven.</h2></div>
-        <div class="timeline" data-animate>
-          <div class="timeline__row"><div class="timeline__k">01</div><div><span class="timeline__step">Mining</span><h3>Drawn from the salt range</h3><p>Natural pink salt is extracted in blocks from the ancient Himalayan foothills — a single, consistent source.</p></div></div>
-          <div class="timeline__row"><div class="timeline__k">02</div><div><span class="timeline__step">Hand Finishing</span><h3>Shaped piece by piece</h3><p>Skilled craftspeople carve, turn and finish each item individually — for the right colour, form and surface.</p></div></div>
-          <div class="timeline__row"><div class="timeline__k">03</div><div><span class="timeline__step">Packaging</span><h3>Cushioned to travel</h3><p>Every piece is individually wrapped and boxed, then palletised with documentation for export.</p></div></div>
-          <div class="timeline__row"><div class="timeline__k">04</div><div><span class="timeline__step">Export</span><h3>Delivered worldwide</h3><p>Orders ship by sea or air freight, with a dedicated contact who responds quickly over WhatsApp.</p></div></div>
+        <div class="ab-journey__head">
+          <span class="ab-label" data-animate="rise">The Journey</span>
+          <h2 data-animate="rise" data-delay="1">From Raw Stone to<br>Finished Piece.</h2>
+        </div>
+        <div class="ab-journey__row">
+          <article class="ab-step" data-animate="rise">
+            <span class="ab-step__num">01</span>
+            <span class="ab-step__rule" aria-hidden="true"></span>
+            <span class="ab-step__media ab-step__media--cut"><img src="/assets/scene/crystal.png" alt="" loading="lazy" aria-hidden="true"></span>
+            <h3>Source</h3>
+            <p>Extracted from ancient Himalayan deposits.</p>
+          </article>
+          <article class="ab-step" data-animate="rise" data-delay="1">
+            <span class="ab-step__num">02</span>
+            <span class="ab-step__rule" aria-hidden="true"></span>
+            <span class="ab-step__media"><img src="/assets/products/png/card-edible-bowl.jpg" alt="" loading="lazy" aria-hidden="true"></span>
+            <h3>Select</h3>
+            <p>Carefully selected for quality, colour and character.</p>
+          </article>
+          <article class="ab-step" data-animate="rise" data-delay="2">
+            <span class="ab-step__num">03</span>
+            <span class="ab-step__rule" aria-hidden="true"></span>
+            <span class="ab-step__media"><img src="/assets/products/png/card-salt-lamp.jpg" alt="" loading="lazy" aria-hidden="true"></span>
+            <h3>Craft</h3>
+            <p>Shaped and finished by skilled hands.</p>
+          </article>
+          <article class="ab-step" data-animate="rise" data-delay="3">
+            <span class="ab-step__num">04</span>
+            <span class="ab-step__rule" aria-hidden="true"></span>
+            <span class="ab-step__media"><img src="/assets/products/png/card-salt-bricks.jpg" alt="" loading="lazy" aria-hidden="true"></span>
+            <h3>Deliver</h3>
+            <p>Prepared for homes, businesses and global markets.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- VALUES -->
-    <section class="section bg-white">
-      <div class="container">
-        <div class="section-head center" data-animate><span class="eyebrow">What Guides Us</span><h2>The standard behind every piece.</h2></div>
-        <div class="grid grid--3">
-          <div class="value-item" data-animate><div class="value-item__num">I</div><h3>Care over volume</h3><p>Each piece is shaped and checked by hand — we would rather do fewer well than many carelessly.</p></div>
-          <div class="value-item" data-animate data-delay="1"><div class="value-item__num">II</div><h3>Consistency you can sell</h3><p>The right colour and finish, order after order — so buyers can put their name on it.</p></div>
-          <div class="value-item" data-animate data-delay="2"><div class="value-item__num">III</div><h3>Honest, direct pricing</h3><p>No inflated catalogue numbers. You get a real quote for what you actually need.</p></div>
+    <!-- ============ 5. THE PEOPLE ============ -->
+    <section class="ab-people">
+      <div class="container ab-people__grid">
+        <div class="ab-people__stack" data-animate="left">
+          <figure class="ab-people__img ab-people__img--back">
+            <img src="/assets/products/png/card-home-decor.jpg" alt="Finished salt pieces in a warm interior setting" loading="lazy">
+          </figure>
+          <figure class="ab-people__img ab-people__img--front">
+            <img src="/assets/products/png/card-salt-lamp.jpg" alt="A hand-finished Himalayan salt lamp" loading="lazy">
+          </figure>
+        </div>
+        <div class="ab-people__body" data-animate="right">
+          <span class="ab-label">The Makers</span>
+          <h2>Crafted by Hands.<br><em>Defined by Care.</em></h2>
+          <p class="ab-lede">Every piece passes through the hands of people who have shaped this stone for years — often for a generation before that.</p>
+          <p>Machines can cut salt. They cannot read it. Choosing where a block will split, how a surface should be finished, which pieces meet the standard and which do not — that judgement is human, and it is the reason our work is consistent.</p>
+          <p>Consistency is not a promise we make once. It is the same decision, made carefully, thousands of times.</p>
         </div>
       </div>
     </section>
-    <!-- CTA BAND -->
-    <section class="cta-band">
-      <div class="container section--tight cta-band__inner">
-        <div class="cta-band__text" data-animate>
-          <span class="eyebrow">Let's talk</span>
-          <h2>Ready to start an order?</h2>
-          <p>Tell us what you need and we'll send a direct quote — no catalogue prices, no obligation.</p>
+
+    <!-- ============ 6. OUR PROMISE ============ -->
+    <section class="ab-promise">
+      <span class="ab-promise__glow" aria-hidden="true"></span>
+      <div class="container">
+        <h2 class="ab-promise__statement" data-animate="rise">Pure by Nature.<br><em>Precise by Craft.</em></h2>
+        <div class="ab-principles">
+            <div class="ab-principle" data-animate="rise">
+              <span class="ab-principle__label">Authenticity</span>
+              <p>Naturally sourced Himalayan pink salt.</p>
+            </div>
+            <div class="ab-principle" data-animate="rise" data-delay="1">
+              <span class="ab-principle__label">Craftsmanship</span>
+              <p>Carefully handled and finished.</p>
+            </div>
+            <div class="ab-principle" data-animate="rise" data-delay="2">
+              <span class="ab-principle__label">Consistency</span>
+              <p>Reliable quality from source to shipment.</p>
+            </div>
+            <div class="ab-principle" data-animate="rise" data-delay="3">
+              <span class="ab-principle__label">Responsibility</span>
+              <p>Built around long-term relationships and dependable supply.</p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. TO THE WORLD ============ -->
+    <section class="ab-globe">
+      <div class="container ab-globe__grid">
+        <div class="ab-globe__body" data-animate="left">
+          <span class="ab-label">Global Reach</span>
+          <h2>From One Ancient Range<br>to a World of Possibilities.</h2>
+          <p class="ab-lede">Serving customers and partners across international markets — retailers, wellness brands, hospitality groups and architectural suppliers.</p>
+          <p>Orders are documented, palletised and shipped by sea or air, with flexible minimums and packaging prepared for the destination market.</p>
+          <a href="/contact.html" class="ab-link">Discuss your market <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <div class="btn-row" data-animate data-delay="1">
-          <a href="https://wa.me/[WHATSAPP]?text=Hi%20Pink%20Ridge%2C%20I%27d%20like%20to%20start%20an%20order." class="btn btn--ghost-light btn--lg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M20.5 3.5A11.9 11.9 0 0012 0 12 12 0 001.7 18L0 24l6.2-1.6A12 12 0 0012 24a12 12 0 008.5-20.5zM12 21.8a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1112 21.8z"/></svg>Chat on WhatsApp</a>
-          <a href="tel:[PHONE]" class="btn btn--ghost-light btn--lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>Call Us</a>
+        <div class="ab-globe__vis" data-animate="right">
+        <svg class="ab-globe__art" viewBox="0 0 720 720" fill="none" aria-hidden="true">
+          <defs>
+            <radialGradient id="gsphere" cx="0.38" cy="0.32" r="0.78">
+              <stop offset="0" stop-color="#F6E7E0"/><stop offset="0.62" stop-color="#E4CCC3"/><stop offset="1" stop-color="#CBA79D"/>
+            </radialGradient>
+            <linearGradient id="garc" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#B47D74" stop-opacity="0"/>
+              <stop offset="0.45" stop-color="#B47D74" stop-opacity="0.85"/>
+              <stop offset="1" stop-color="#C8948C" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="360" cy="360" r="250" fill="url(#gsphere)"/>
+          <circle cx="360" cy="360" r="250" stroke="rgba(180,125,116,0.35)" stroke-width="1"/>
+          <!-- graticule -->
+          <g stroke="rgba(255,255,255,0.55)" stroke-width="1" fill="none">
+            <ellipse cx="360" cy="360" rx="250" ry="86"/><ellipse cx="360" cy="360" rx="250" ry="166"/>
+            <ellipse cx="360" cy="360" rx="86" ry="250"/><ellipse cx="360" cy="360" rx="166" ry="250"/>
+          </g>
+          <!-- export routes radiating from the range -->
+          <g stroke="url(#garc)" stroke-width="1.6" fill="none" class="ab-routes">
+            <path d="M392 300 C 300 170, 130 190, 92 288"/>
+            <path d="M392 300 C 340 150, 500 108, 604 196"/>
+            <path d="M392 300 C 470 330, 590 372, 648 428"/>
+            <path d="M392 300 C 350 430, 236 498, 150 470"/>
+            <path d="M392 300 C 452 424, 470 540, 396 604"/>
+            <path d="M392 300 C 300 316, 196 356, 132 372"/>
+          </g>
+          <g class="ab-pins">
+            <circle cx="92"  cy="288" r="5"/><circle cx="604" cy="196" r="5"/>
+            <circle cx="648" cy="428" r="5"/><circle cx="150" cy="470" r="5"/>
+            <circle cx="396" cy="604" r="5"/><circle cx="132" cy="372" r="5"/>
+          </g>
+          <circle class="ab-origin" cx="392" cy="300" r="9"/>
+          <circle class="ab-origin-ring" cx="392" cy="300" r="9"/>
+        </svg>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. FINAL BRAND STATEMENT ============ -->
+    <section class="ab-final">
+      <svg class="ab-final__range" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true" style="opacity:1">
+        <path d="M0 420 L120 250 L206 306 L318 176 L404 262 L520 140 L628 244 L742 150 L866 268 L972 190 L1092 286 L1200 214 L1320 300 L1440 236 L1440 420 Z" fill="currentColor" opacity="0.30"/>
+        <path d="M0 420 L96 316 L200 360 L300 262 L400 336 L512 240 L620 320 L730 250 L850 340 L960 286 L1080 356 L1190 300 L1310 368 L1440 318 L1440 420 Z" fill="currentColor" opacity="0.55"/>
+        <path d="M0 420 L140 372 L260 398 L380 350 L500 392 L640 344 L780 390 L900 356 L1040 398 L1180 362 L1320 400 L1440 372 L1440 420 Z" fill="currentColor" opacity="0.85"/>
+      </svg>
+      <div class="container ab-final__inner" data-animate="rise">
+        <h2>Ancient Stone.<br><em>Modern Luxury.</em></h2>
+        <p>Rooted in the Himalayas.<br>Crafted for what comes next.</p>
+        <a href="/contact.html" class="btn btn--primary btn--lg magnetic">Let&rsquo;s Work Together</a>
       </div>
     </section>
   </main>

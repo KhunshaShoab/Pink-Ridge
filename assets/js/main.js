@@ -275,6 +275,18 @@
     }
   }
 
+  /* ---------------- About: globe routes reveal ---------------- */
+  var globe = document.querySelector('.ab-globe');
+  if (globe) {
+    if (reduce || !('IntersectionObserver' in window)) { globe.classList.add('in-view'); }
+    else {
+      var gio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in-view'); gio.unobserve(e.target); } });
+      }, { threshold: 0.3 });
+      gio.observe(globe);
+    }
+  }
+
   /* ---------------- Card tilt ---------------- */
   if (!reduce && window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('[data-tilt]').forEach(function (el) {
