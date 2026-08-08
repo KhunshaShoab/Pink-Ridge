@@ -2552,3 +2552,66 @@ body.about .btn--primary:hover { background: var(--rose-brown); }
 .ab-globe__art .ab-routes path { stroke-width: 2.1; }
 .ab-globe__art { filter: drop-shadow(0 30px 50px rgba(43,29,26,0.14)); }
 .ab-pins circle { r: 6; }
+
+/* ==========================================================================
+   ABOUT — real photography (aspect ratios chosen to match native asset sizes)
+   ========================================================================== */
+.ab-hero__photo { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.ab-hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%;
+  transform: scale(1.05); animation: abHeroDrift 26s ease-in-out infinite alternate; }
+@keyframes abHeroDrift { from { transform: scale(1.05) translateY(0); } to { transform: scale(1.12) translateY(-1.5%); } }
+body.about .ab-hero__wash { z-index: 1;
+  background: linear-gradient(96deg, rgba(248,243,238,0.97) 0%, rgba(248,243,238,0.9) 26%, rgba(248,243,238,0.62) 46%, rgba(248,243,238,0.16) 68%, rgba(43,29,26,0.14) 100%); }
+body.about .ab-hero__inner { z-index: 2; }
+@media (max-width: 860px) { body.about .ab-hero__wash {
+  background: linear-gradient(180deg, rgba(248,243,238,0.72) 0%, rgba(248,243,238,0.94) 46%, rgba(248,243,238,0.98) 100%); } }
+
+/* origin panorama: real mine photograph */
+.ab-pano { background: #2B1D1A; }
+.ab-pano__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 46%; }
+.ab-pano figcaption { color: rgba(248,243,238,0.78); z-index: 3;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+.ab-pano::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(24,14,12,0.55) 0%, transparent 46%); }
+
+/* material macro is a wide texture — give it a landscape frame */
+.ab-material__macro img { aspect-ratio: 3/2; }
+@media (min-width: 940px) { .ab-material__grid { grid-template-columns: 1fr 1fr; } }
+
+/* journey imagery is natively ~2.4:1 — crop lightly, don't upscale hard */
+.ab-step__media img { aspect-ratio: 16/9; }
+
+/* people: landscape artisan photography, overlapped */
+.ab-people__img--back { width: 82%; aspect-ratio: 16/11; }
+.ab-people__img--front { width: 54%; aspect-ratio: 16/12; }
+
+/* global: photographic map with drawn routes + shipping inset */
+.ab-map { position: relative; }
+.ab-map img { width: 100%; height: auto; display: block; }
+.ab-map__routes { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ab-map__routes path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ab-globe.in-view .ab-map__routes path { animation: routeDraw 2.1s var(--ease) forwards; }
+.ab-map__routes path:nth-child(1){animation-delay:.15s}.ab-map__routes path:nth-child(2){animation-delay:.35s}
+.ab-map__routes path:nth-child(3){animation-delay:.55s}.ab-map__routes path:nth-child(4){animation-delay:.75s}
+.ab-map__routes path:nth-child(5){animation-delay:.95s}.ab-map__routes path:nth-child(6){animation-delay:1.15s}
+.ab-map__pins circle { opacity: 0; }
+.ab-globe.in-view .ab-map__pins circle { animation: pinIn .6s var(--ease) forwards 1.3s; }
+.ab-map__ring { transform-origin: 690px 300px; animation: pinPulse 3.4s ease-out infinite; }
+.ab-ship { margin-top: 1.1rem; overflow: hidden; }
+.ab-ship img { width: 100%; aspect-ratio: 21/9; object-fit: cover; display: block; }
+
+/* final statement: photographic range band behind the type */
+.ab-final__photo { position: absolute; left: 0; bottom: 0; width: 100%; height: 56%; z-index: 0; overflow: hidden; }
+.ab-final__photo::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(248,243,238,0.72) 0%, rgba(248,243,238,0.92) 58%, var(--cream) 100%); }
+.ab-final__photo img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ab-hero__photo img { animation: none !important; }
+  .ab-map__routes path { stroke-dashoffset: 0 !important; }
+  .ab-map__pins circle { opacity: 1 !important; }
+  .ab-map__ring { animation: none !important; }
+}
+/* origin detail: source is wide, so frame it landscape instead of portrait */
+.ab-origin__detail img { aspect-ratio: 16/11 !important; object-fit: cover !important; display: block; }
+@media (min-width: 900px) { .ab-origin__grid { align-items: end; } }
