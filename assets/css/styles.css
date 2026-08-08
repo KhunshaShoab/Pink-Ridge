@@ -2615,3 +2615,140 @@ body.about .ab-hero__inner { z-index: 2; }
 /* origin detail: source is wide, so frame it landscape instead of portrait */
 .ab-origin__detail img { aspect-ratio: 16/11 !important; object-fit: cover !important; display: block; }
 @media (min-width: 900px) { .ab-origin__grid { align-items: end; } }
+
+/* ==========================================================================
+   ABOUT v2 — numbered editorial sections with a deliberate rhythm
+   dramatic -> quiet -> detailed -> photographic -> dark -> info -> product -> quiet
+   ========================================================================== */
+body.about .ab-num { display: block; font-family: var(--sans); font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose-brown); margin-bottom: 1.5rem; }
+body.about h2 { letter-spacing: -0.02em; }
+body.about .ab-hero__sub { max-width: 26ch; }
+
+/* ---- 01 THE ORIGIN — quiet, medium height, vertical photograph ---- */
+.org { background: var(--cream); padding-block: clamp(4.5rem, 8vw, 7.5rem); }
+.org__grid { display: grid; gap: clamp(2.4rem, 6vw, 5.5rem); grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 940px) { .org__grid { grid-template-columns: 1fr 0.82fr; } }
+.org__body h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); line-height: 1.06; margin-bottom: 1.6rem; }
+.org__body p { line-height: 1.95; margin-bottom: 1.1rem; max-width: 48ch; }
+.org__figure { position: relative; }
+.org__figure img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: 50% 42%; display: block; }
+.org__figure figcaption { margin-top: 0.8rem; font-family: var(--sans); font-size: 0.62rem;
+  letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute); }
+
+/* ---- 02 THE MATERIAL — macro left 45%, minimal rows right ---- */
+.mat { background: var(--ivory-l); padding-block: clamp(4.5rem, 8vw, 7.5rem); }
+.mat__grid { display: grid; gap: clamp(2.4rem, 5.5vw, 5rem); grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 940px) { .mat__grid { grid-template-columns: 45% 1fr; } }
+.mat__macro img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+.mat__body h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); line-height: 1.06; margin-bottom: 1.4rem; }
+.mat__rows { margin-top: 2.4rem; display: grid; }
+.mt-row { display: grid; gap: 0.3rem; padding: 1.05rem 0; border-top: 1px solid rgba(180,125,116,0.24); }
+@media (min-width: 620px) { .mt-row { grid-template-columns: 10rem 1fr; gap: 1.4rem; align-items: baseline; } }
+.mt-row:last-child { border-bottom: 1px solid rgba(180,125,116,0.24); }
+.mt-row dt { font-family: var(--sans); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--rose-brown); }
+.mt-row dd { margin: 0; font-size: 0.92rem; line-height: 1.7; color: var(--ink-mute); }
+
+/* ---- 03 THE JOURNEY — five large photographs as a visual timeline ---- */
+.jr { background: var(--cream); padding-block: clamp(4.5rem, 8vw, 7.5rem); }
+.jr__head { max-width: 640px; margin-bottom: clamp(2.4rem, 4.5vw, 3.6rem); }
+.jr__head h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); line-height: 1.06; }
+.jr__row { display: grid; gap: clamp(1.1rem, 2vw, 1.8rem); grid-template-columns: 1fr; }
+@media (min-width: 640px)  { .jr__row { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .jr__row { grid-template-columns: repeat(5, 1fr); } }
+.jr-stage__media { display: block; overflow: hidden; margin-bottom: 1rem; }
+.jr-stage__media img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block;
+  transition: transform 1.3s var(--ease); }
+.jr-stage:hover .jr-stage__media img { transform: scale(1.05); }
+.jr-stage__meta { display: flex; align-items: baseline; gap: 0.7rem; padding-top: 0.7rem;
+  border-top: 1px solid rgba(180,125,116,0.3); margin-bottom: 0.5rem; }
+.jr-stage__meta b { font-family: "Playfair Display", Georgia, serif; font-weight: 500;
+  font-size: 1.1rem; color: var(--rose-brown); }
+.jr-stage__name { font-family: var(--sans); font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-dark); }
+body.about .jr-stage p { font-size: 0.84rem; line-height: 1.65; max-width: 26ch; }
+
+/* ---- 04 THE MAKERS — one large photograph, tall section ---- */
+.mk { background: var(--ivory-l); padding-block: clamp(5rem, 9vw, 8.5rem); }
+.mk__grid { display: grid; gap: clamp(2.6rem, 6vw, 5.5rem); grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 940px) { .mk__grid { grid-template-columns: 1.08fr 1fr; } }
+.mk__photo { overflow: hidden; }
+.mk__photo img { width: 100%; aspect-ratio: 5/4; object-fit: cover; display: block;
+  transition: transform 1.6s var(--ease); }
+.mk__photo:hover img { transform: scale(1.04); }
+.mk__body h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); line-height: 1.06; margin-bottom: 1.5rem; }
+.mk__body h2 em { font-style: italic; color: var(--terra); }
+.mk__body p { line-height: 1.95; margin-bottom: 1.05rem; max-width: 46ch; }
+.mk__mark { margin-top: 2.2rem !important; padding-top: 1.5rem; border-top: 1px solid rgba(180,125,116,0.3);
+  font-family: var(--sans) !important; font-size: 0.68rem !important; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase; line-height: 2 !important; color: var(--ink-dark) !important; }
+
+/* ---- 05 THE STANDARD — terracotta, deliberately compact ---- */
+.std { background: linear-gradient(150deg, #B07A6C 0%, #A96A57 52%, #8E5544 100%);
+  padding-block: clamp(3.6rem, 6.5vw, 5.6rem); }
+.std__head { max-width: 720px; margin-bottom: clamp(2.2rem, 4vw, 3.2rem); }
+body.about .std .ab-num { color: #EFD8CF; }
+body.about .std__head h2 { color: #FBF5F1; font-size: clamp(1.9rem, 3.8vw, 3rem); line-height: 1.12; }
+.std__grid { display: grid; gap: clamp(1.6rem, 3vw, 2.6rem); grid-template-columns: 1fr; }
+@media (min-width: 620px)  { .std__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .std__grid { grid-template-columns: repeat(4, 1fr); } }
+.std-col { padding-top: 1.15rem; border-top: 1px solid rgba(255,255,255,0.34); }
+.std-col__label { display: block; font-family: var(--sans); font-size: 0.63rem; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase; color: #FBF5F1; margin-bottom: 0.6rem; }
+body.about .std-col p { font-size: 0.86rem; line-height: 1.7; color: rgba(251,245,241,0.82); max-width: 26ch; }
+
+/* ---- 06 GLOBAL REACH — cream, map right, market list left ---- */
+.gl { background: var(--cream); padding-block: clamp(4.5rem, 8vw, 7.5rem); }
+.gl__grid { display: grid; gap: clamp(2.4rem, 5.5vw, 5rem); grid-template-columns: 1fr; align-items: center; }
+@media (min-width: 940px) { .gl__grid { grid-template-columns: 0.9fr 1.1fr; } }
+.gl__body h2 { font-size: clamp(1.9rem, 4vw, 3.2rem); line-height: 1.1; margin-bottom: 1.4rem; }
+.gl__markets { margin-top: 2rem; display: grid; gap: 0; }
+.gl__markets li { padding: 0.72rem 0; border-top: 1px solid rgba(180,125,116,0.24);
+  font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-dark); }
+.gl__markets li:last-child { border-bottom: 1px solid rgba(180,125,116,0.24); }
+.gl__map img { width: 100%; height: auto; display: block; }
+.gl__map figcaption { display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+  margin-top: 1rem; font-family: var(--sans); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.26em; text-transform: uppercase; color: var(--rose-brown); }
+.gl__map figcaption .arrow { width: 20px; height: 20px; }
+
+/* ---- 07 WHAT WE CREATE — product bridge ---- */
+.wc { background: var(--beige); padding-block: clamp(4.5rem, 8vw, 7.5rem); }
+.wc__head { max-width: 620px; margin-bottom: clamp(2.4rem, 4.5vw, 3.6rem); }
+.wc__head h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); line-height: 1.06; }
+.wc__grid { display: grid; gap: clamp(1.2rem, 2.2vw, 2rem); grid-template-columns: 1fr; }
+@media (min-width: 640px)  { .wc__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .wc__grid { grid-template-columns: repeat(4, 1fr); } }
+.wc-cat { display: block; }
+.wc-cat__media { display: block; overflow: hidden; margin-bottom: 1rem; }
+.wc-cat__media img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block;
+  transition: transform 1.3s var(--ease); }
+.wc-cat:hover .wc-cat__media img { transform: scale(1.05); }
+.wc-cat__name { display: block; font-family: "Playfair Display", Georgia, serif; font-weight: 500;
+  font-size: 1.24rem; color: var(--ink-dark); line-height: 1.2; }
+.wc-cat__desc { display: block; font-size: 0.84rem; line-height: 1.6; color: var(--ink-mute); margin-top: 0.34rem; }
+.wc-cat__go { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 0.9rem;
+  font-family: var(--sans); font-size: 0.63rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--rose-brown); }
+.wc-cat__go .arrow { width: 13px; height: 13px; transition: transform .4s var(--ease); }
+.wc-cat:hover .wc-cat__go .arrow { transform: translateX(4px); }
+
+/* ---- FINAL — quiet, centred, magazine endpaper ---- */
+.fin { position: relative; overflow: hidden; text-align: center; background: var(--cream);
+  padding-block: clamp(5.5rem, 10vw, 9rem) clamp(6rem, 11vw, 10rem); }
+.fin__photo { position: absolute; left: 0; bottom: 0; width: 100%; height: 58%; z-index: 0; overflow: hidden; }
+.fin__photo img { width: 100%; height: 100%; object-fit: cover; }
+.fin__photo::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(248,243,238,0.78) 0%, rgba(248,243,238,0.94) 56%, var(--cream) 100%); }
+.fin__inner { position: relative; z-index: 1; }
+.fin__brand { display: block; font-family: var(--sans); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.4em; text-transform: uppercase; color: var(--rose-brown); margin-bottom: 1.8rem; }
+.fin h2 { font-size: clamp(2.6rem, 6.6vw, 5.4rem); line-height: 1.03; margin-bottom: 1.6rem; }
+.fin h2 em { font-style: italic; color: var(--terra); }
+.fin p { font-size: clamp(0.98rem, 1.3vw, 1.12rem); line-height: 1.9; max-width: 46ch;
+  margin: 0 auto 2.6rem; }
+.fin .btn-row { justify-content: center; }
+body.about .btn--outline { background: transparent; color: var(--ink-dark); border-color: rgba(43,29,26,0.35); }
+body.about .btn--outline:hover { background: var(--ink-dark); color: var(--cream); border-color: var(--ink-dark); }
