@@ -2752,3 +2752,23 @@ body.about .std-col p { font-size: 0.86rem; line-height: 1.7; color: rgba(251,24
 .fin .btn-row { justify-content: center; }
 body.about .btn--outline { background: transparent; color: var(--ink-dark); border-color: rgba(43,29,26,0.35); }
 body.about .btn--outline:hover { background: var(--ink-dark); color: var(--cream); border-color: var(--ink-dark); }
+
+/* ==========================================================================
+   Category consolidation (3 categories) + wider global map
+   ========================================================================== */
+@media (min-width: 700px)  { .ccard-grid, .wc__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1080px) { .ccard-grid, .wc__grid { grid-template-columns: repeat(3, 1fr); } }
+body.home .ccard__media, body.about .wc-cat__media { background: #F5EEE7; }
+body.home .ccard__media img, body.about .wc-cat__media img { aspect-ratio: 4/5; object-fit: cover; }
+/* four journey stages */
+@media (min-width: 1080px) { .jr__row { grid-template-columns: repeat(4, 1fr); } }
+
+/* global reach: map is the primary visual */
+.gl__head { max-width: 780px; margin-bottom: clamp(2.2rem, 4vw, 3.4rem); }
+.gl__head h2 { font-size: clamp(2.1rem, 4.6vw, 3.7rem); line-height: 1.06; margin-bottom: 1.3rem; }
+.gl__map--wide { width: 100%; }
+.gl__map--wide img { width: 100%; height: auto; display: block; border-radius: 2px; }
+.gl__markets--row { display: flex; flex-wrap: wrap; gap: 0 clamp(1.4rem, 3vw, 3rem);
+  margin-top: 2rem; border-top: 1px solid rgba(180,125,116,0.24); padding-top: 1.1rem; }
+.gl__markets--row li { border: 0 !important; padding: 0.3rem 0; }
+.field .opt { font-weight: 400; opacity: 0.6; text-transform: none; letter-spacing: 0; }
