@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Consolidated into /lamps.html
+Disallow: /decor.html
+
+Sitemap: https://pinkridges.com/sitemap.xml
