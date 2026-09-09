@@ -8,7 +8,7 @@ declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
 
 const MAIL_TO   = 'info@pinkridges.com';
-const MAIL_FROM = 'noreply@pinkridges.com';   // must be on your own domain
+const MAIL_FROM = 'info@pinkridges.com';      // same mailbox as MAIL_TO: only one to create
 const SITE_NAME = 'Pink Ridge';
 
 function fail(string $msg, int $code = 400): void {
