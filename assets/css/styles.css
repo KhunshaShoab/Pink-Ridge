@@ -2866,3 +2866,9 @@ body.home .ccard__media img, body.about .wc-cat__media img { aspect-ratio: 4/5; 
   .cat-blob__tag { font-size: 0.55rem; letter-spacing: 0.14em; }
   .cat-blob__go { width: 30px; height: 30px; margin-top: 0.6rem; }
 }
+
+/* form validation + send failure feedback */
+.form-error { margin-bottom: 1rem; padding: 0.8rem 1rem; border-radius: 10px;
+  background: rgba(169,106,87,0.10); border: 1px solid rgba(169,106,87,0.35);
+  color: #8E4A38; font-size: 0.85rem; line-height: 1.5; }
+.is-invalid { border-color: #A96A57 !important; box-shadow: 0 0 0 3px rgba(169,106,87,0.14); }

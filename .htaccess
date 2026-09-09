@@ -47,5 +47,10 @@ ErrorDocument 404 /404.html
   Header set X-Frame-Options "SAMEORIGIN"
 </IfModule>
 
+# Never serve the fallback enquiry log
+<Files "inquiries.log">
+  Require all denied
+</Files>
+
 # Block access to the repo metadata if it ever gets uploaded
 RedirectMatch 404 /\.git

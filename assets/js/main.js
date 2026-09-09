@@ -159,11 +159,51 @@
   document.querySelectorAll('form[data-inquiry]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var hp = form.querySelector('input[name="company_website"]');
-      if (hp && hp.value.trim() !== '') return;
       var success = form.querySelector('.form-success');
-      form.querySelectorAll('input, select, textarea, button').forEach(function (el) { if (!el.classList.contains('hp')) el.setAttribute('disabled', 'disabled'); });
-      if (success) { success.classList.add('show'); success.setAttribute('tabindex', '-1'); success.focus(); success.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      var errBox  = form.querySelector('.form-error');
+      var btn     = form.querySelector('button[type="submit"]');
+      if (errBox) { errBox.hidden = true; errBox.textContent = ''; }
+
+      // required fields
+      var missing = [];
+      form.querySelectorAll('[required]').forEach(function (el) {
+        if (!el.value.trim()) { missing.push(el); el.classList.add('is-invalid'); }
+        else el.classList.remove('is-invalid');
+      });
+      if (missing.length) {
+        if (errBox) { errBox.textContent = 'Please complete the required fields.'; errBox.hidden = false; }
+        missing[0].focus();
+        return;
+      }
+
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.innerHTML; btn.textContent = 'Sending…'; }
+
+      fetch(form.getAttribute('action') || '/send.php', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); })
+      .then(function (data) {
+        if (!data || !data.ok) throw new Error((data && data.error) || 'Send failed');
+        form.querySelectorAll('input, select, textarea, button').forEach(function (el) {
+          if (!el.classList.contains('hp')) el.setAttribute('disabled', 'disabled');
+        });
+        if (success) {
+          success.classList.add('show');
+          success.setAttribute('tabindex', '-1');
+          success.focus();
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      })
+      .catch(function (err) {
+        if (btn) { btn.disabled = false; if (btn.dataset.label) btn.innerHTML = btn.dataset.label; }
+        if (errBox) {
+          errBox.textContent = (err && err.message) ? err.message
+            : 'We could not send your message. Please WhatsApp us instead.';
+          errBox.hidden = false;
+        }
+      });
     });
   });
 

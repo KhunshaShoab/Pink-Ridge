@@ -99,7 +99,7 @@
           </ul>
         </div>
         <div data-animate="right">
-          <form class="form-card" data-inquiry novalidate>
+          <form class="form-card" data-inquiry action="/send.php" method="post" novalidate>
             <h2 style="font-size:1.7rem;font-weight:500;margin-bottom:1.3rem;color:var(--dark)">Send an inquiry</h2><div class="form-grid">
               <div class="field"><label for="name">Name <span class="req">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
               <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
@@ -114,6 +114,7 @@
               <div class="hp" aria-hidden="true"><label for="company_website">Leave empty</label><input id="company_website" name="company_website" type="text" tabindex="-1" autocomplete="off"></div>
               <div class="full"><button type="submit" class="btn btn--primary btn--block">Send Inquiry <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><p class="form-note">Prices provided on inquiry only. We reply within one business day.</p></div>
             </div>
+            <div class="form-error" role="alert" hidden></div>
             <div class="form-success" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><strong>Thank you — your inquiry is on its way.</strong><p>We'll reply with a direct quote shortly. Prefer to chat now? Message us on WhatsApp.</p></div></div>
           </form>
         </div>
