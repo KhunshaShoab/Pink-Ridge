@@ -2629,6 +2629,20 @@ body.about .ab-hero__sub { max-width: 26ch; }
 .org { background: var(--cream); padding-block: clamp(4.5rem, 8vw, 7.5rem) 0; overflow: hidden; }
 .org__title { font-size: clamp(2.4rem, 5.6vw, 4.6rem); line-height: 1.04; max-width: 16ch; margin-bottom: clamp(2.6rem, 5vw, 4rem); }
 .org__title em { font-style: italic; color: var(--terra); }
+.org__head { display: grid; gap: clamp(2rem, 4vw, 3rem); grid-template-columns: 1fr; align-items: end;
+  margin-bottom: clamp(2.6rem, 5vw, 4rem); }
+.org__head .org__title { margin-bottom: 0; }
+@media (min-width: 940px) { .org__head { grid-template-columns: 1.15fr 0.85fr; gap: clamp(3rem, 6vw, 6rem); } }
+.org__facts { margin: 0; }
+.org__facts-label { display: block; font-family: var(--sans); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--rose-brown); margin-bottom: 0.9rem; }
+.org-fact { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; align-items: baseline; padding: 0.95rem 0;
+  border-top: 1px solid rgba(169,106,87,0.24); opacity: 0; transform: translateX(14px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: calc(var(--i) * 120ms + 250ms); }
+.org-fact:last-child { border-bottom: 1px solid rgba(169,106,87,0.24); }
+.org__facts.in .org-fact { opacity: 1; transform: none; }
+.org-fact dt { font-family: var(--sans); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra); }
+.org-fact dd { margin: 0; font-family: "Playfair Display", Georgia, serif; font-size: clamp(1rem, 1.4vw, 1.15rem); line-height: 1.4; color: var(--ink-dark); }
 .org__cols { display: grid; gap: clamp(2.4rem, 5vw, 5rem); grid-template-columns: 1fr; }
 @media (min-width: 860px) { .org__cols { grid-template-columns: 1fr 1fr; } }
 .org__col p { line-height: 1.95; margin-bottom: 1.05rem; max-width: 48ch; }
@@ -2656,7 +2670,7 @@ body.about .ab-hero__sub { max-width: 26ch; }
 @media (prefers-reduced-motion: reduce) {
   .org__track { animation: none; }
   .org__rule { transform: none; }
-  .org-w { opacity: 1; transform: none; }
+  .org-w, .org-fact { opacity: 1; transform: none; }
 }
 
 /* ---- 02 OUR PROCESS — five-step connected flowchart (no photography) ---- */
