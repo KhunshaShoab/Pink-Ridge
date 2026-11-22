@@ -2949,3 +2949,33 @@ body.home .ccard__media img { aspect-ratio: 4/5; object-fit: cover; }
 .gs-5 .gallery-line  { border-radius: 44% 56% 38% 62% / 58% 44% 56% 42%; rotate: -4deg; translate: 8px 8px; }
 .gs-6 .gallery-stage { border-radius: 46% 54% 24px 70% / 48% 46% 24px 40%; }
 .gs-6 .gallery-line  { border-radius: 54% 46% 66% 30% / 44% 52% 40% 36%; rotate: 6deg; translate: -10px -6px; }
+
+/* ==========================================================================
+   Product cards — organic shapes (same shape as each product's own page),
+   open layout, calmer image scale, product codes
+   ========================================================================== */
+.grid--3 .card, .carousel .card { background: transparent; border: 0; border-radius: 0; box-shadow: none; overflow: visible; text-align: center; }
+.grid--3 .card:hover, .carousel .card:hover { transform: none; box-shadow: none; }
+.card .card__media[class*="cm-"] { width: 84%; margin: 0 auto; aspect-ratio: 3/4; background: #F3E9E2;
+  box-shadow: none; transition: border-radius 1s var(--ease), transform .6s var(--ease); }
+.card .card__media[class*="cm-"] img { object-fit: cover; object-position: 50% 55%; }
+.card:hover .card__media[class*="cm-"] { transform: translateY(-4px); }
+.card:hover .card__media[class*="cm-"] img { transform: scale(1.02); }
+.card .card__media[class*="cm-"] .card__tag { left: 50%; top: 8%; transform: translateX(-50%); }
+.grid--3 .card__body, .carousel .card__body { padding: 1.1rem 0.4rem 0.4rem; align-items: center; }
+.card__body p { max-width: 34ch; margin-inline: auto; }
+.card__meta { display: block; }
+.card__code { font-family: var(--sans); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; color: var(--text-mute, #A99A90); margin-left: 0.55rem; }
+.card__code::before { content: "·"; margin-right: 0.55rem; }
+
+.card .card__media.cm-1 { border-radius: 62% 38% 46% 54% / 44% 52% 48% 56%; }
+.card .card__media.cm-2 { border-radius: 50% 50% 18px 24px / 36% 38% 18px 24px; }
+.card .card__media.cm-3 { border-radius: 40% 60% 58% 42% / 56% 40% 60% 44%; }
+.card .card__media.cm-4 { border-radius: 34% 66% 40% 60% / 52% 34% 66% 48%; }
+.card .card__media.cm-5 { border-radius: 56% 44% 62% 38% / 40% 58% 42% 60%; }
+.card .card__media.cm-6 { border-radius: 46% 54% 22px 70% / 48% 46% 22px 40%; }
+
+/* product page: code beside the category */
+.product-info .product-code { display: inline-block; margin-left: 0.8rem; padding: 0.22rem 0.7rem; border: 1px solid rgba(169,106,87,0.35);
+  border-radius: 999px; font-family: var(--sans); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; color: var(--terra, #A96A57); vertical-align: middle; }
+.product-info .eyebrow { display: inline-block; }
