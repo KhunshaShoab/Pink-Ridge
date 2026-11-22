@@ -2625,24 +2625,39 @@ body.about .ab-num { display: block; font-family: var(--sans); font-size: 0.64re
 body.about h2 { letter-spacing: -0.02em; }
 body.about .ab-hero__sub { max-width: 26ch; }
 
-/* ---- 01 THE ORIGIN — quiet, medium height, vertical photograph ---- */
-.org { background: var(--cream); padding-block: clamp(4.5rem, 8vw, 7.5rem); }
-.org__grid { display: grid; gap: clamp(2.4rem, 6vw, 5.5rem); grid-template-columns: 1fr; align-items: center; }
-@media (min-width: 940px) { .org__grid { grid-template-columns: 1fr 0.82fr; } }
-.org__body h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); line-height: 1.06; margin-bottom: 1.6rem; }
-.org__body p { line-height: 1.95; margin-bottom: 1.1rem; max-width: 48ch; }
-.org__figure { position: relative; }
-.org__art { display: block; width: 100%; aspect-ratio: 4/5; background: var(--ivory-l); border: 1px solid rgba(169,106,87,0.18); }
-.org__art .ln { fill: none; stroke: var(--terra); stroke-width: 1.2; stroke-linejoin: round; stroke-linecap: round; opacity: 0.75; }
-.org__art .ln--soft { opacity: 0.38; }
-.org__art .ln--dash { stroke-dasharray: 2 5; opacity: 0.9; }
-.org__ridge { fill: var(--cream); }
-.org__pin-ring { fill: var(--cream); stroke: var(--terra); stroke-width: 1.2; }
-.org__pin-dot { fill: var(--terra); }
-.org__lbl { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; fill: var(--ink-dark); }
-.org__lbl--soft { font-weight: 500; letter-spacing: 0.08em; text-transform: none; fill: var(--ink-mute); }
-.org__figure figcaption { margin-top: 0.8rem; font-family: var(--sans); font-size: 0.62rem;
-  letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute); }
+/* ---- 01 ORIGIN & MAKERS — typographic, with drawn rules, word reveal and drifting band ---- */
+.org { background: var(--cream); padding-block: clamp(4.5rem, 8vw, 7.5rem) 0; overflow: hidden; }
+.org__title { font-size: clamp(2.4rem, 5.6vw, 4.6rem); line-height: 1.04; max-width: 16ch; margin-bottom: clamp(2.6rem, 5vw, 4rem); }
+.org__title em { font-style: italic; color: var(--terra); }
+.org__cols { display: grid; gap: clamp(2.4rem, 5vw, 5rem); grid-template-columns: 1fr; }
+@media (min-width: 860px) { .org__cols { grid-template-columns: 1fr 1fr; } }
+.org__col p { line-height: 1.95; margin-bottom: 1.05rem; max-width: 48ch; }
+/* hairline that draws itself in when the column scrolls into view */
+.org__rule { display: block; height: 1px; background: var(--terra); opacity: 0.55; margin-bottom: 1.3rem;
+  transform: scaleX(0); transform-origin: left; transition: transform 1.4s var(--ease) 0.25s; }
+.org__col.in .org__rule { transform: scaleX(1); }
+.org__label { display: block; font-family: var(--sans); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--rose-brown); margin-bottom: 1rem; }
+/* statement revealed word by word */
+.org__statement { margin: clamp(3.4rem, 7vw, 5.5rem) 0 0; font-family: "Playfair Display", Georgia, serif; font-weight: 500;
+  font-size: clamp(1.8rem, 4.2vw, 3.4rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--ink-dark) !important; }
+.org__statement em { font-style: italic; color: var(--terra); }
+.org-w { display: inline-block; opacity: 0.12; transform: translateY(0.35em);
+  transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: calc(var(--i) * 110ms + 200ms); }
+.org__statement.in .org-w { opacity: 1; transform: none; }
+/* slow drifting band of words */
+.org__band { margin-top: clamp(3.6rem, 7vw, 5.5rem); border-block: 1px solid rgba(169,106,87,0.25); padding-block: 1.15rem; overflow: hidden; }
+.org__track { display: flex; width: max-content; align-items: center; animation: org-drift 48s linear infinite; }
+.org__track span { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--rose-brown); white-space: nowrap; padding-inline: clamp(1.2rem, 2.4vw, 2.2rem); }
+.org__track i { width: 6px; height: 6px; border-radius: 50%; background: var(--terra); opacity: 0.5; flex: none; }
+.org__band:hover .org__track { animation-play-state: paused; }
+@keyframes org-drift { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .org__track { animation: none; }
+  .org__rule { transform: none; }
+  .org-w { opacity: 1; transform: none; }
+}
 
 /* ---- 02 OUR PROCESS — five-step connected flowchart (no photography) ---- */
 .jr { background: var(--beige); padding-block: clamp(4.5rem, 8vw, 7.5rem); }
@@ -2687,25 +2702,6 @@ body.about .flow__step p { margin: 0; font-size: 0.86rem; line-height: 1.65; max
   body.about .flow__step p { font-size: 0.86rem; }
 }
 
-/* ---- 04 THE MAKERS — one large photograph, tall section ---- */
-.mk { background: var(--ivory-l); padding-block: clamp(5rem, 9vw, 8.5rem); }
-.mk__grid { display: grid; gap: clamp(2.6rem, 6vw, 5.5rem); grid-template-columns: 1fr; align-items: center; }
-@media (min-width: 940px) { .mk__grid { grid-template-columns: 1.08fr 1fr; } }
-.mk__quote { position: relative; margin: 0; display: flex; flex-direction: column; justify-content: center;
-  aspect-ratio: 5/4; padding: clamp(2rem, 5vw, 4rem); background: var(--cream);
-  border-radius: 48% 52% 18px 22px / 30% 32% 18px 22px; border: 1px solid rgba(169,106,87,0.28); text-align: center; }
-.mk__quote::before { content: ""; position: absolute; inset: 4% -3% -4% 3%; border: 1px solid rgba(169,106,87,0.3);
-  border-radius: inherit; pointer-events: none; }
-.mk__quote-icon { width: 34px; height: 34px; margin: 0 auto 1.4rem; color: var(--terra); }
-.mk__quote blockquote { margin: 0; font-family: "Playfair Display", Georgia, serif; font-weight: 500;
-  font-size: clamp(1.7rem, 3.2vw, 2.7rem); line-height: 1.18; color: var(--ink-dark); letter-spacing: -0.01em; }
-.mk__quote blockquote em { font-style: italic; color: var(--terra); }
-.mk__quote figcaption { margin-top: 1.6rem; font-family: var(--sans); font-size: 0.62rem; font-weight: 700;
-  letter-spacing: 0.24em; text-transform: uppercase; color: var(--rose-brown); }
-@media (max-width: 560px) { .mk__quote { aspect-ratio: auto; padding: 3.4rem 1.6rem 2.8rem; } }
-.mk__body h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); line-height: 1.06; margin-bottom: 1.5rem; }
-.mk__body h2 em { font-style: italic; color: var(--terra); }
-.mk__body p { line-height: 1.95; margin-bottom: 1.05rem; max-width: 46ch; }
 
 /* ---- 05 THE STANDARD — terracotta, deliberately compact ---- */
 .std { background: linear-gradient(150deg, #B07A6C 0%, #A96A57 52%, #8E5544 100%);
